@@ -1,0 +1,41 @@
+.add-button {
+    /* background-color: white; */
+    opacity: 0;
+    height: 20px;
+    /* width: 1px; */
+}
+
+.add-button:hover {
+    opacity: 1;
+    height: 20px;
+}
+
+.system-color {
+    background-color: #d8d8d8;
+}
+
+.goals-color {
+    background-color: #a9fffb;
+}
+
+.fact-and-observations-color {
+    background-color: rgb(255 156 166);
+}
+.emotions-color{
+    background-color: #d8abd8;
+}
+.metrics-color {
+    background-color: rgb(248 203 165);
+}
+.systems-and-key-information-color {
+    background-color: rgb(236 233 188);
+}
+.touchpoints-color {
+    background-color: #b6ffb6;
+}
+.pain-points-color {
+    background-color: rgb(156 202 255);
+}
+.opportunity-and-ideas-color{
+    background-color: #beddc3;
+}

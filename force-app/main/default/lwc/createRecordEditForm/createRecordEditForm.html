@@ -1,0 +1,22 @@
+<template>
+    <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handelSuccess} onerror={handelError}>
+        <lightning-messages></lightning-messages>
+        <lightning-layout multiple-rows>
+            <template for:each={fieldRecord} for:item="fieldItem">
+                <div key={fieldItem.name}>
+                    <lightning-layout-item size="12">
+                        <lightning-input-field field-name={fieldItem.name} required={fieldItem.required}
+                            value={fieldItem.value} disabled={fieldItem.isDisabled}></lightning-input-field>
+                    </lightning-layout-item>
+                </div>
+            </template>
+            <lightning-layout-item size="12" class="slds-align_absolute-center">
+                <lightning-button class="slds-p-around_x-small" variant="brand" label="Cancel"
+                    onclick={closeModalWindow}>
+                </lightning-button>
+                <lightning-button class="slds-p-around_x-small" type="submit" variant="brand" label="Create Persona">
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-record-edit-form>
+</template>
