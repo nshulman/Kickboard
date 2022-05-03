@@ -1,0 +1,25 @@
+<template>
+    <template if:true={processedPersonaData}>
+        <template for:each={processedPersonaData} for:item="eachStep">
+            <div key={eachStep.Id}>
+                <article class={eachStep.color} data-id={eachStep.Id}>
+                    <div class="slds-p-around_x-small" data-id={eachStep.Id}>
+                        <div>
+                            <p class="slds-text-align_left"><span>{</span>{eachStep.Type__c}<span>}</span></p>
+                        </div>
+                        <template if:true={eachStep.Description__c}>
+                            <div class="slds-grid slds-m-left_x-small">
+                                <span>-{</span>
+                                <lightning-formatted-rich-text key={eachStepDetail} value={eachStep.Description__c}>
+                                </lightning-formatted-rich-text><span>}</span>
+                            </div>
+                        </template>
+                    </div>
+                </article>
+                <button class="slds-button slds-button_brand slds-button_stretch add-button"
+                    data-id={eachStep.Blueprint_Persona_Step__c}
+                    onclick={addPersonaStep}><b>+</b></button>
+            </div>
+        </template>
+    </template>
+</template>

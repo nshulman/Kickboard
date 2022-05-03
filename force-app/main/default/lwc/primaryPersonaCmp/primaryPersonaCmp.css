@@ -1,0 +1,12 @@
+.first-col{
+    min-width: 140px;
+    color:#b2b2b2;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.steps-column{
+    max-width: 140px;
+    min-width: 140px;
+}

@@ -1,0 +1,25 @@
+<template>
+  <div class="slds-grid">
+    <div class="first-col slds-m-horizontal_xxx-small">
+      <article class="slds-card steps-column">
+        {primaryPersonaName}
+      </article>
+    </div>
+    <div class="slds-grid">
+      <template if:true={processedPrimaryPersona}>
+        <template for:each={processedPrimaryPersona} for:item="pri">
+          <div key={pri} class="slds-m-horizontal_xxx-small steps-column ">
+            <template if:true={pri}>
+              <template for:each={pri} for:item="priCard">
+                <div key={priCard}>
+                  <c-persona-step-component persona-step-data={priCard.Blueprint_Cards__r}
+                    onaddnewpersonastep={addPrimaryPersonaStep}></c-persona-step-component>
+                </div>
+              </template>
+            </template>
+          </div>
+        </template>
+      </template>
+    </div>
+  </div>
+</template>

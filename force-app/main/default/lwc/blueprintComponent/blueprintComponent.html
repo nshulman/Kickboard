@@ -1,0 +1,71 @@
+<template>
+    <template if:true={showAddPersona}>
+        <div class="slds-col  slds-size_1-of-3">
+            <lightning-button label="Add Step" title="Non-primary action" onclick={enableModal}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </template>
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div>Create New Step</div>
+                </header>
+
+                <div style="background-color: white;">
+                    <lightning-record-edit-form object-api-name={objectApiName} onsuccess={addStep}
+                        onsubmit={handleSubmit} onerror={handelError}>
+                        <lightning-messages></lightning-messages>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12">
+                                <lightning-input-field name="description" field-name={stepDescriptionField}>
+                                </lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-input-field field-name={stepStageField} required></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-input-field field-name={stepBlueprintField} value={blueprintId} disabled
+                                    required></lightning-input-field>
+                            </lightning-layout-item>
+
+                            <template if:true={showDisplayNumber}>
+                                <lightning-layout-item size="12">
+                                    <lightning-input-field name="Display Order" field-name={stepDisplayOrder}
+                                        onchange={handleChange}></lightning-input-field>
+                                </lightning-layout-item>
+                            </template>
+                            <lightning-layout-item size="12" class="slds-align_absolute-center">
+                                <lightning-button class="slds-p-around_x-small" variant="brand" label="Cancel"
+                                    onclick={closeModal}></lightning-button>
+                                <lightning-button class="slds-p-around_x-small" type="submit" variant="brand"
+                                    label="Create Step"></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <div class="slds-grid">
+        <template for:each={arrayOfMapOfStepIndexToName} for:item="step" for:index="index">
+            <div key={step.Name} class="slds-grid slds-grid_vertical steps-column slds-m-horizontal_xxx-small">
+                <div class="steps-buttons--group slds-grid_reverse">
+                    <button class="slds-button add-button " key={step.Name} data-order={index}
+                        onclick={handleAddStep}>+</button>
+                    <button draggable="true" ondragstart={handleDragStart} ondrop={handleDrop}
+                        ondragover={handleDragover} data-order={index} title={step.Name}
+                        class="slds-button slds-button_outline-brand steps-button">{step.Name}</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

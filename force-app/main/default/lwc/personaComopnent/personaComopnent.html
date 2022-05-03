@@ -1,0 +1,69 @@
+<template>
+
+    <div class="slds-grid ">
+        <template for:each={personaRecords} for:item="stepRec">
+            <div key={stepRec} class="steps-column slds-m-horizontal_xxx-small">
+                <div class="slds-text-align_center">
+                    <template if:true={stepRec}>
+                        <template for:each={stepRec} for:item="perStep">
+                            <div key={perStep.Id} data-id={perStep.Id} class="slds-m-bottom_small personaStepCmp"
+                                onclick={displayPersonaOnTop}>
+                                <div class="slds-m-top_xx-small slds-m-bottom_xx-small">
+                                    <article class="slds-card persona-style">
+                                        <div class="slds-p-bottom_medium slds-p-top_medium">
+                                            <div>
+                                                <img src="avatar.png" alt="">
+                                            </div>
+                                            <div class="slds-text-align_center">
+                                                <p class="slds-text-align_center persona-font">
+                                                    <b>{perStep.Blueprint_Persona__r.Name}</b>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <div class="slds-m-top_xx-small">
+                                        <c-persona-step-component persona-step-data={perStep.Blueprint_Cards__r}
+                                            onaddnewpersonastep={addNewPersonaStep}></c-persona-step-component>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+    <template if:true={showSpinner}>
+        <c-spinner-component is-show={showSpinner}></c-spinner-component>
+    </template>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <template if:true={modelHeading}>
+                        <div>Create New Persona</div>
+                    </template>
+                    <template if:false={modelHeading}>
+                        <div>Create New Persona Step</div>
+                    </template>
+                </header>
+                <template if:true={formData}>
+                    <template for:each={formData} for:item="formItem">
+                        <c-create-record-edit-form key={formItem.objectApiName} object-api-name={formItem.objectApiName}
+                            field-record={formItem.fieldName} style="background-color:white;"
+                            onformsubmittion={getDataFromEditForm} onclosemodelwindow={closeModal}>
+                        </c-create-record-edit-form>
+                    </template>
+                </template>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
