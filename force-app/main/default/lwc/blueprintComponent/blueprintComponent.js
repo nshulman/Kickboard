@@ -1,6 +1,5 @@
-import { LightningElement, track, wire, api } from 'lwc';
+import { LightningElement, track } from 'lwc';
 import getSteps from '@salesforce/apex/StepsController.getSteps';
-import { updateRecord } from 'lightning/uiRecordApi';
 import updateDisplayOrdersOfSteps from '@salesforce/apex/StepsController.updateDisplayOrdersOfSteps';
 import updateOnDragDrop from '@salesforce/apex/StepsController.updateOnDragDrop';
 import STEP_OBJECT from '@salesforce/schema/Blueprint_Step__c';
@@ -16,18 +15,14 @@ export default class BlueprintComponent extends LightningElement {
     @track arrayOfMapOfStepIndexToName = [];
     showModal = false;
     targetOrder = null;
-    descriptionValue = '';
-    stepFields = [STEP_DESCRIPTION, STEP_BLUEPRINT];
-    stepNameField = STEP_NAME;
     objectApiName = STEP_OBJECT;
     stepDescriptionField = STEP_DESCRIPTION;
     stepBlueprintField = STEP_BLUEPRINT;
     stepDisplayOrder = STEP_DISPLAY_ORDER;
     stepStageField = STEP_STAGE;
 
-    blueprintId = 'a041y0000035VMYAA2';
+    blueprintId = 'a041y0000035XMmAAM';
     error = '';
-    showPlusIcon = false;
     showDisplayNumber = false;
     showAddPersona = true;
     newStepId = '';

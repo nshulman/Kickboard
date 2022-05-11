@@ -32,15 +32,15 @@
         </div>
         <c-blueprint-component onsendsteps={getAllSteps}></c-blueprint-component>
     </div>
-    <template if:true={showPersonaSteps}>
+    <template if:true={isPersonaStepsVisible}>
         <div class="primary-persona-row slds-p-around_xx-small slds-m-bottom_small">
-            <c-primary-persona-cmp current-step-record={setpsWithOrder} onnewprimaryps={createPersonaStepFromParent}>
+            <c-primary-persona-cmp steps-record={stepsRecord}  onsendbpcarddetail={createBlueprintCardFromParent}>
             </c-primary-persona-cmp>
         </div>
         <div class="slds-grid personas-row slds-p-around_xx-small slds-m-bottom_small">
             <div class="slds-m-horizontal_xxx-small first-col">
             </div>
-            <c-persona-comopnent current-step-record={setpsWithOrder}></c-persona-comopnent>
+            <c-persona-comopnent current-step-record={stepsRecord}  onrefreshprimarycard={refreshPrimaryPersona}></c-persona-comopnent>
         </div>
     </template>
 </template>
