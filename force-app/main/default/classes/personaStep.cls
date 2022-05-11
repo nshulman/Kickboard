@@ -1,4 +1,5 @@
 public class personaStep {
+
     public class myException extends Exception {
     }
     /**
@@ -41,6 +42,7 @@ public class personaStep {
                 break;
             }
         }
+
         for (Blueprint_Persona__c perRecord : persona) {
             if (isPersonaChecked && perRecord.Blueprint_Primary_Persona__c) {
                 perRecord.addError(new myException('Primary Persona already exists'));
