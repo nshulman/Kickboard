@@ -10,3 +10,8 @@
     max-width: 140px;
     min-width: 140px;
 }
+.add-button {
+    height: 15px;
+    border-radius: 10px;
+
+}

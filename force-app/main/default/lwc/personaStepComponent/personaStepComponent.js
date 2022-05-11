@@ -1,51 +1,67 @@
-import { LightningElement, api, wire, track } from 'lwc';
-
+import { LightningElement, api,track,wire } from 'lwc';
+import handleDragAndDrop from '@salesforce/apex/personaStep.handleDragAndDrop';
 export default class PersonaStepComponent extends LightningElement {
 
     @api personaStepData;
-    @track processedPersonaData;
-    connectedCallback() {
+    @track showSpinner = false;
 
-
-        if (this.personaStepData && this.personaStepData.length > 0) {
-
-            this.processedPersonaData = this.personaStepData.map(e => ({ ...e }));
-            this.processedPersonaData =  this.processedPersonaData.sort((a, b) => ((a.Order__c && b.Order__c) && (a.Order__c > b.Order__c)) ? 1 : -1);
-
-            if (this.processedPersonaData) {
-                this.processedPersonaData = this.addCssClass(this.processedPersonaData);
+    /**
+     * Call apex method for drag and drop.
+     * returns true if drag and drop successfully happen,
+     * then call event for component refresh.
+     * @param dragId
+     * @param dropCardId
+     * @param dropCardPSId
+     */
+    runDragAndDrop(dragId,dropCardId,dropCardPSId){
+        handleDragAndDrop({dragCardId:dragId,dropCardId:dropCardId,dragDropPSId:dropCardPSId})
+            .then((data)=>{
+            console.log('data',data);
+            if(data){
+                setTimeout(()=>{
+                    this.showSpinner = false;
+                    this.dispatchEvent(new CustomEvent('refreshdragdrop',{
+                        detail: true
+                    }))
+                },1000)
             }
+        }).catch(err=>{
+            console.log('err',err);
+        })
+    }
+
+    /**
+     * Set persona-step-id and card-id when we start dragging
+      * @param event
+     */
+    dragCard(event){
+        event.dataTransfer.setData('dragPersonaStepId', event.target.dataset.name);
+        event.dataTransfer.setData('dragCardId', event.target.dataset.id);
+    }
+
+    /**
+     *
+     * @param event
+     */
+    allowDrop(event){
+        event.preventDefault();
+    }
+    /**
+     * check wether drag and drop is happen under same persona-step.
+     * @param event
+     */
+    dropCard(event){
+        event.preventDefault();
+        let dropCardPSId = event.currentTarget.dataset.name;
+        let dragCardPSId = event.dataTransfer.getData("dragPersonaStepId");
+        let dragId = event.dataTransfer.getData("dragCardId");
+        if(dropCardPSId===dragCardPSId){
+            console.log('i ma in ')
+            let dropCardId = event.currentTarget.dataset.id;
+            this.showSpinner = true;
+            this.runDragAndDrop(dragId,dropCardId,dropCardPSId);
         }
     }
-    addCssClass(data) {
-        data.forEach(r => {
-            if (r.Type__c === 'Emotions') {
-                r['color'] = 'slds-card emotions-color';
-            } else if (r.Type__c === "Facts and Observations") {
-                r['color'] = 'slds-card fact-and-observations-color';
-            } else if (r.Type__c === "Goals") {
-                r['color'] = 'slds-card goals-color';
-            } else if (r.Type__c === "Metrics") {
-                r['color'] = 'slds-card metrics-color';
-            } else if (r.Type__c === "Pain Points") {
-                r['color'] = 'slds-card pain-points-color';
-            } else if (r.Type__c === "Systems and Key Information") {
-                r['color'] = 'slds-card systems-and-key-information-color';
-            } else if (r.Type__c === "Touchpoints") {
-                r['color'] = 'slds-card touchpoints-color';
-            }else if(r.Type__c==='Opportunities and Ideas'){
-                r['color'] = 'slds-card opportunity-and-ideas-color';
-            }
-        })
-        return data;
-    }
 
-    addPersonaStep(event) {
-        let obj = {};
-        obj.personaStepId = event.target.dataset.id;
-       // obj.stepId = event.target.dataset.item;
-        this.dispatchEvent(new CustomEvent('addnewpersonastep', {
-            detail: obj
-        }))
-    }
+
 }

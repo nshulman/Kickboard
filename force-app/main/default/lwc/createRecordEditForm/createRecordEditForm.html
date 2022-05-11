@@ -1,5 +1,5 @@
 <template>
-    <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handelSuccess} onerror={handelError}>
+    <lightning-record-edit-form object-api-name={objectApiName} onsubmit={handleSubmit} onsuccess={handelSuccess} onerror={handelError}>
         <lightning-messages></lightning-messages>
         <lightning-layout multiple-rows>
             <template for:each={fieldRecord} for:item="fieldItem">
