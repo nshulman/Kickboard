@@ -15,6 +15,11 @@
     <navType>Standard</navType>
     <tabs>Kickboard_Getting_Started</tabs>
     <tabs>Lane__c</tabs>
+    <tabs>Blueprint_Card__c</tabs>
+    <tabs>Blueprint__c</tabs>
+    <tabs>Blueprint_Persona__c</tabs>
+    <tabs>Blueprint_Persona_Step__c</tabs>
+    <tabs>Blueprint_Step__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Kickboard_UtilityBar</utilityBar>
 </CustomApplication>

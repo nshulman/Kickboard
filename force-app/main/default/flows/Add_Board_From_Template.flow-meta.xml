@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <assignments>
         <name>BoardNew_Assignment</name>
         <label>BoardNew Assignment</label>
@@ -166,6 +165,7 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <interviewLabel>Add Board From Template {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Add Board From Template</label>
     <processMetadataValues>
         <name>BuilderType</name>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <decisions>
         <name>MakePublic_Decision</name>
         <label>MakePublic Decision</label>
@@ -25,6 +24,7 @@
         </rules>
     </decisions>
     <interviewLabel>Make Swim Lane Public {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Make Swim Lane Public</label>
     <processMetadataValues>
         <name>BuilderType</name>

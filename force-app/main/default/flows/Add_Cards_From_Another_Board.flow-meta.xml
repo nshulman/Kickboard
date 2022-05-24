@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <assignments>
         <name>CardNew_Assignment</name>
         <label>CardNew Assignment</label>
@@ -107,6 +106,7 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <interviewLabel>Add Cards From Another Board {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Add Cards From Another Board</label>
     <loops>
         <name>Card_Loop</name>

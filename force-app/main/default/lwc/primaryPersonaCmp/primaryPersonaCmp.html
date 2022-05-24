@@ -1,0 +1,28 @@
+<template>
+  <div class="slds-grid">
+    <div class="first-col slds-m-horizontal_xxx-small">
+      <article class="slds-card steps-column">
+        {primaryPersonaName}
+      </article>
+    </div>
+    <div class="slds-grid">
+      <template if:true={processedPrimaryPersona}>
+        <template for:each={processedPrimaryPersona} for:item="primary">
+          <div key={pri} class="slds-m-horizontal_xxx-small steps-column ">
+            <template if:true={primary}>
+              <template for:each={primary} for:item="primaryCard">
+                <div key={primaryCard} class="slds-m-top_xx-small">
+                  <c-persona-step-component persona-step-data={primaryCard.Blueprint_Cards__r} oneditrecord={sendBlueprintCardDetails}
+                                            onrefreshdragdrop={refreshPrimary}></c-persona-step-component>
+                  <button class="slds-button slds-button_brand slds-button_stretch add-button"
+                          data-id={primaryCard.Id}
+                          onclick={sendBlueprintCardDetails}><b>+</b></button>
+                </div>
+              </template>
+            </template>
+          </div>
+        </template>
+      </template>
+    </div>
+  </div>
+</template>

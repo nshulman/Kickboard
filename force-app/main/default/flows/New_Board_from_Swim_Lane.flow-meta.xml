@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <formulas>
         <name>NextOrder_Formula</name>
         <dataType>Number</dataType>
@@ -9,6 +8,7 @@
         <scale>0</scale>
     </formulas>
     <interviewLabel>New Board from Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>New Board from Swim Lane</label>
     <processMetadataValues>
         <name>BuilderType</name>

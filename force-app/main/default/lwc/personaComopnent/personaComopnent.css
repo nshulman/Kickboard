@@ -1,0 +1,14 @@
+.add-button {
+    height: 15px;
+    border-radius: 10px;
+}
+.steps-column{
+    max-width: 140px;
+    min-width: 140px;
+}
+.persona-style{
+    background-color: gray;
+}
+.persona-font{
+    color: #d3eeec;
+}
