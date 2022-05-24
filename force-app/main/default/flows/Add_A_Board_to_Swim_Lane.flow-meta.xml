@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <assignments>
         <name>AddCategoryMappingsToCollection_Assignment</name>
         <label>AddCategoryMappingsToCollection Assignment</label>
@@ -99,6 +98,7 @@
         </connector>
     </assignments>
     <interviewLabel>Add A Board to Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Add A Board to Swim Lane</label>
     <loops>
         <name>BoardsAfter_Loop</name>

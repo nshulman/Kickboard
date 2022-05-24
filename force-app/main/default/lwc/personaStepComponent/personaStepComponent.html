@@ -1,0 +1,35 @@
+<template>
+    <template if:true={personaStepData}>
+        <template for:each={personaStepData} for:item="eachStep">
+            <div key={eachStep.Id} class="slds-p-bottom_xx-small" data-name={eachStep.Blueprint_Persona_Step__c} data-id={eachStep.Id} draggable='true' ondragstart= {dragCard} ondragover={allowDrop} ondrop={dropCard} >
+                <article
+                        class={eachStep.cardCss__c}
+                        data-id={eachStep.Id}>
+                    <div class="my-icon-container">
+                        <lightning-icon data-id={eachStep.Id} icon-name="action:edit" size="xx-small" alternative-text="Edit" class="slds-float_right my-icon" title="Edit" onclick={handleRecordEdit}></lightning-icon>
+                        <lightning-icon data-id={eachStep.Id}  icon-name="action:delete" size="xx-small" alternative-text="delete" class="slds-float_right my-icon" title="Delete" onclick={handleRecordDelete}></lightning-icon>
+
+                    </div>
+                    <div class="slds-p-around_x-small" data-id={eachStep.Id}>
+                        <div>
+                            <p class="slds-text-align_left"><span>{</span>{eachStep.Type__c}<span>}</span></p>
+                        </div>
+                        <template if:true={eachStep.Description__c}>
+                            <div class="slds-grid slds-m-left_x-small">
+                                <span>-{</span>
+                                <lightning-formatted-rich-text key={eachStepDetail} value={eachStep.Description__c}>
+                                </lightning-formatted-rich-text><span>}</span>
+                            </div>
+                        </template>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </template>
+    <template if:true={showSpinner}>
+        <c-spinner-component is-show={showSpinner}></c-spinner-component>
+    </template>
+    <template if:true={isDelete}>
+        <c-message-box is-modal-open={isDelete} model-header={deleteTitle} model-message={deleteMessage} delete-record-id={isDeleteRecordId} ondelete={deleteRecord} onclosedelete={handleClose}></c-message-box>
+    </template>
+</template>

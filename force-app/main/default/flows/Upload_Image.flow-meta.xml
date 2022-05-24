@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <assignments>
         <name>ContentDocumentLink_Assignment</name>
         <label>ContentDocumentLink Assignment</label>
@@ -96,6 +95,7 @@
         <expression>&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=&quot;+{!ContentVersion_Loop}+&quot;&amp;operationContext=CHATTER&amp;contentId=&quot;+{!ContentDocumentId_Loop}</expression>
     </formulas>
     <interviewLabel>Upload Image {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Upload Image</label>
     <loops>
         <name>ContentDocumentId_Loop</name>

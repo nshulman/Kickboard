@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <isTemplate>true</isTemplate>
     <dynamicChoiceSets>
         <name>BoardRecordChoiceSet</name>
         <dataType>String</dataType>
@@ -18,6 +17,7 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <interviewLabel>Move Board to Another Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>Move Board to Another Swim Lane</label>
     <processMetadataValues>
         <name>BuilderType</name>

@@ -39,14 +39,13 @@ export default class EventListener extends LightningElement {
         }
 
         onError((error) => {
-            console.log("Received error from server: ", JSON.stringify(error));
+            console.log("Received error from server: ");
         });
     }
 
     unsubscribeFromEvent() {
         unsubscribe(this.subscription, (response) => {
             if (response) {
-                console.log("Unsubscribed from channel");
                 this.subscription = undefined;
             }
         });
