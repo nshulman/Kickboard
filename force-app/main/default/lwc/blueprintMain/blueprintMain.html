@@ -30,7 +30,7 @@
         <div class="slds-m-horizontal_xxx-small first-col">
             When?
         </div>
-        <c-blueprint-component onsendsteps={getAllSteps}></c-blueprint-component>
+        <c-blueprint-component record-id={recordId} onsendsteps={getAllSteps}></c-blueprint-component>
     </div>
     <template if:true={isPersonaStepsVisible}>
         <div class="primary-persona-row slds-p-around_xx-small slds-m-bottom_small">

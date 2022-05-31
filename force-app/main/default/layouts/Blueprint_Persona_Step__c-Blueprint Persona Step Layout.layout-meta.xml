@@ -8,22 +8,22 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Blueprint_Primary_Persona__c</field>
+                <behavior>Readonly</behavior>
+                <field>Name</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Name</field>
+                <field>Blueprint_Persona__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Blueprint_Step__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Blueprint__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Description__c</field>
+                <field>Order__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -59,9 +59,10 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Description__c</fields>
         <fields>Order__c</fields>
-        <fields>Blueprint_Step__c.NAME</fields>
-        <relatedList>Blueprint_Persona_Step__c.Blueprint_Persona__c</relatedList>
+        <fields>Type__c</fields>
+        <relatedList>Blueprint_Card__c.Blueprint_Persona_Step__c</relatedList>
         <sortField>Order__c</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>
@@ -71,7 +72,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h17000009bzPG</masterLabel>
+        <masterLabel>00h17000009bzPF</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

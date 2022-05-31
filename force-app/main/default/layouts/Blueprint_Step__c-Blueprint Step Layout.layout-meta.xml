@@ -8,18 +8,22 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Blueprint_Primary_Persona__c</field>
+                <behavior>Required</behavior>
+                <field>Name</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Name</field>
+                <field>Blueprint__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Milestone__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Blueprint__c</field>
+                <behavior>Edit</behavior>
+                <field>Order__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -60,8 +64,8 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Order__c</fields>
-        <fields>Blueprint_Step__c.NAME</fields>
-        <relatedList>Blueprint_Persona_Step__c.Blueprint_Persona__c</relatedList>
+        <fields>Blueprint_Persona__c.NAME</fields>
+        <relatedList>Blueprint_Persona_Step__c.Blueprint_Step__c</relatedList>
         <sortField>Order__c</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>
@@ -71,7 +75,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h17000009bzPG</masterLabel>
+        <masterLabel>00h17000009bzPH</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

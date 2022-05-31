@@ -10,7 +10,7 @@ import {refreshApex} from "@salesforce/apex";
 
 export default class BlueprintComponent extends LightningElement {
 
-    @api blueprintId = 'a041y0000035XMmAAM';
+    @api recordId;
     @track BLUEPRINT_API = 'Blueprint__c';
     @track CREATE_NEW_STEP = 'Create New Step';
     @track allStepsData;
@@ -38,7 +38,7 @@ export default class BlueprintComponent extends LightningElement {
      * Get all steps data
      * @param result
      */
-    @wire(getSteps, { blueprintId: '$blueprintId' })
+    @wire(getSteps, { blueprintId: '$recordId' })
     wiredGetSteps(result) {
         this.refreshStepsData = result;
         this.allStepsData = result.data;
@@ -76,10 +76,7 @@ export default class BlueprintComponent extends LightningElement {
         this.currentStepOrder = event.target.dataset.order;
         this.formMetadata.forEach(data => {
             if (data.name.fieldApiName === this.BLUEPRINT_API) {
-                if(data.value){
-                    data.value='';
-                }
-                data.value = this.blueprintId ? this.blueprintId: ''
+                data.value = this.recordId || '';
             }
         })
     }

@@ -4,6 +4,7 @@ import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import STEP_OBJECT from '@salesforce/schema/Blueprint_Step__c';
 import STEP_STAGE from '@salesforce/schema/Blueprint_Step__c.Stage__c';
 export default class BlueprintMain extends LightningElement {
+    @api recordId;
     @track stageArray = [];
     @track isPersonaStepsVisible = false;
     @track stepsRecord;
