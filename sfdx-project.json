@@ -9,7 +9,7 @@
         }
     ],
     "name": "kickboard",
-    "namespace": "kickboard",
+    "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "54.0",
     "packageAliases": {

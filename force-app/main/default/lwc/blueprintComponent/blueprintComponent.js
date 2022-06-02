@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 import getSteps from '@salesforce/apex/StepsController.getSteps';
 import updateDisplayOrdersOfSteps from '@salesforce/apex/StepsController.updateDisplayOrdersOfSteps';
 import updateOnDragDrop from '@salesforce/apex/StepsController.updateOnDragDrop';
@@ -12,6 +12,15 @@ import STEP_NAME from '@salesforce/schema/Blueprint_Step__c.Name';
 var indexFrom;
 var indexTo;
 export default class BlueprintComponent extends LightningElement {
+    _recordId;
+    @api
+    get recordId() {
+        return this._recordId;
+    }
+    set recordId(value) {
+        this._recordId = value;
+        console.log('bpr', value);
+    }
     @track arrayOfMapOfStepIndexToName = [];
     showModal = false;
     targetOrder = null;
@@ -21,15 +30,16 @@ export default class BlueprintComponent extends LightningElement {
     stepDisplayOrder = STEP_DISPLAY_ORDER;
     stepStageField = STEP_STAGE;
 
-    blueprintId = 'a041y0000035XMmAAM';
     error = '';
     showDisplayNumber = false;
     showAddPersona = true;
     newStepId = '';
 
     connectedCallback() {
-        getSteps({ blueprintId: this.blueprintId })
+        console.log ('loading', this.recordId);
+        getSteps({ blueprintId: this.recordId })
             .then(result => {
+                console.log('res', result);
                 this.arrayOfMapOfStepIndexToName = result;
                 this.sendSteps();
                 if (this.arrayOfMapOfStepIndexToName.length > 0) {
