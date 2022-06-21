@@ -19,15 +19,15 @@ export default class BlueprintComponent extends LightningElement {
     @track isModalOpen = false;
     @track currentStepOrder;
     @track blueprintStepApiName = BLUEPRINT_STEP_OBJECT;
-    @track formMetadata = [];
      formMetadata =[
         {
+            id:1,
             name: BLUEPRINT_NAME,
             isDisabled: true,
             required: true,
             value: ''
         },
-        {
+        {   id:2,
             name: BLUEPRINT_STEP_NAME,
             isDisabled: false,
             required: true

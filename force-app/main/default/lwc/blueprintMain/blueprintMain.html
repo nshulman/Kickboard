@@ -5,11 +5,10 @@
                 <div class="slds-path__scroller">
                     <div class="slds-path__scroller_inner">
                         <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
-                            <template for:each={stageArray} for:item="path" for:index="index">
+                            <template for:each={stageArray} for:item="path" >
                                 <li key={path} class="slds-path__item slds-is-current slds-is-active"
                                     role="presentation">
-                                    <a aria-selected="true" class="slds-path__link" href="#" role="option"
-                                        tabindex={index}>
+                                    <a aria-selected="true" class="slds-path__link" href="#" role="option">
                                         <span class="slds-path__stage">
                                             <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
                                                 <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#custom1">

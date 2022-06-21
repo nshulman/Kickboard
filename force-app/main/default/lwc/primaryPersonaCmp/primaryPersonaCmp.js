@@ -8,6 +8,10 @@ export default class PrimaryPersonaCmp extends LightningElement {
     @track refreshPrimaryPersonaData;
     @track isRefresh=false;
 
+    connectedCallback() {
+        console.log('primary-persona-step-id',this.stepId);
+    }
+
     /**
      * Get primary persona records and process the records.
      * @param result
@@ -20,6 +24,7 @@ export default class PrimaryPersonaCmp extends LightningElement {
             if (primaryData.length>0) {
                 this.processedPrimaryPersona = this.processPrimaryPersonaData(primaryData);
                 this.primaryPersonaName = primaryData[0] && primaryData[0].Blueprint_Persona__r ? primaryData[0].Blueprint_Persona__r.Name: '';
+                console.log('processedPrimaryPersona',this.processedPrimaryPersona);
             }
         }else if(result.error){
             console.log('Error',result.error);
@@ -62,8 +67,18 @@ export default class PrimaryPersonaCmp extends LightningElement {
                         break;
                     }
                 }
-                result[indexOfStep] = stepToPersonaMap[stepRec];
+                let obj = {};
+                obj.key = indexOfStep;
+                obj.value = stepToPersonaMap[stepRec];
+                result[indexOfStep] = obj;
             })
+            for(let c=0;c<result.length;c++){
+                if(!result[c]){
+                    let obj={};
+                    obj.key = c;
+                    result[c]=obj;
+                }
+            }
         }
         return result;
     }

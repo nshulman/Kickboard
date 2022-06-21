@@ -2,10 +2,11 @@
 
     <div class="slds-grid ">
         <template for:each={personaRecords} for:item="stepRec" for:index="index">
-            <div key={stepRec} class="steps-column slds-m-horizontal_xxx-small" data-id={index}>
+            <template if:true={stepRec}>
+            <div key={stepRec.key} class="steps-column slds-m-horizontal_xxx-small" data-id={index}>
                 <div class="slds-text-align_center">
-                    <template if:true={stepRec}>
-                        <template for:each={stepRec} for:item="perStep">
+                    <template if:true={stepRec.value}>
+                        <template for:each={stepRec.value} for:item="perStep">
                             <div key={perStep.Id} data-id={perStep.Id} data-name={perStep.Blueprint_Step__c}
                                  class="slds-m-bottom_small personaStepCmp"
                                  ondragstart={dragPersona} draggable="true" ondragover={dragOverPersona}
@@ -15,7 +16,7 @@
                                     <article class="slds-card persona-style">
                                         <div class="slds-p-bottom_medium slds-p-top_medium">
                                             <div>
-                                                <img src="avatar.png" alt="">
+                                                <img src={resourceImg} alt="">
                                             </div>
                                             <div class="slds-text-align_center">
                                                 <p class="slds-text-align_center persona-font">
@@ -38,36 +39,49 @@
                     </template>
                 </div>
                 <button class="slds-button slds-button_brand slds-button_stretch add-button"
-                        data-id={index} onclick={createFormForNewPersona}><b>Add Persona</b></button>
+                        data-id={index} onclick={createFormForNewPersona}><b>Add Persona</b>
+                </button>
+
             </div>
+        </template>
         </template>
     </div>
 
     <template if:true={showSpinner}>
-        <c-spinner-component is-show={showSpinner}></c-spinner-component>
+        <c-spinner-component ></c-spinner-component>
     </template>
     <template if:true={isModalOpen}>
         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
                  aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
-                <header class="slds-modal__header">
-                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
-                            title="Close" onclick={closeModal}>
-                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
-                                        size="small"></lightning-icon>
-                        <span class="slds-assistive-text">Close</span>
-                    </button>
-                    <div>{formHeading}</div>
-                </header>
+<!--                <header class="slds-modal__header">-->
+<!--                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"-->
+<!--                            title="Close" onclick={closeModal}>-->
+<!--                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"-->
+<!--                                        size="small"></lightning-icon>-->
+<!--                        <span class="slds-assistive-text">Close</span>-->
+<!--                    </button>-->
+<!--                    <div>{formHeading}</div>-->
+<!--                </header>-->
                 <template if:true={metadata}>
-                    <c-create-record-edit-form object-name={apiName} edit-record-id={editRecordId}
-                                               field-record={metadata} style="background-color:white;"
-                                               onformsubmit={createRecord}
-                                               onformsuccess={cardCreationSuccess} onclosemodelwindow={closeModal}>
-                    </c-create-record-edit-form>
+                    <div class="slds-grid">
+                        <c-create-record-edit-form class="slds-col " object-name={apiName} edit-record-id={editRecordId}
+                                                   field-record={metadata} style="background-color:white;"
+                                                   onformsubmit={createRecord}
+                                                   onformsuccess={cardCreationSuccess} onclosemodelwindow={closeModal}>
+                        </c-create-record-edit-form>
+                        <template if:true={editRecordId}>
+                            <lightning-button data-id={editRecordId} class="slds-col  slds-m-left_x-small" variant="brand" label="Delete" title="Primary action" onclick={handleRecordDelete}></lightning-button>
+                        </template>
+                    </div>
+
                 </template>
             </div>
         </section>
         <div class="slds-backdrop slds-backdrop_open"></div>
     </template>
+    <template if:true={isDelete}>
+        <c-message-box is-modal-open={isDelete} model-header={deleteTitle} model-message={deleteMessage} delete-record-id={isDeleteRecordId} ondelete={deleteRecord} onclosedelete={handleClose}></c-message-box>
+    </template>
+
 </template>

@@ -5,6 +5,8 @@ export default class ChildCmp extends LightningElement {
     @api editRecordId;
     @track recId;
      connectedCallback() {
+         console.log('record-deit fieldRecord',this.fieldRecord);
+         console.log('record-deit editRecordId',this.editRecordId);
          this.recId = this.editRecordId?this.editRecordId:'';
     }
 

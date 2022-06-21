@@ -10,6 +10,7 @@ import BLUEPRINT_CARD_OBJECT from '@salesforce/schema/Blueprint_Card__c';
 import BLUEPRINT_STEP from '@salesforce/schema/Blueprint_Persona_Step__c.Blueprint_Step__c';
 import BLUEPRINT_PERSONA from '@salesforce/schema/Blueprint_Persona_Step__c.Blueprint_Persona__c';
 import BLUEPRINT_PERSONA_STEP_OBJECT from '@salesforce/schema/Blueprint_Persona_Step__c';
+import deleteCardRecord from '@salesforce/apex/personaStep.deleteCardRecord';
 import { refreshApex } from '@salesforce/apex';
 
 export default class PersonaStepCmp extends LightningElement {
@@ -29,31 +30,32 @@ export default class PersonaStepCmp extends LightningElement {
     @track blueprintCardApiName = BLUEPRINT_CARD_OBJECT;
     @track blueprintPersonaStepApiName = BLUEPRINT_PERSONA_STEP_OBJECT;
     @track blueprintCardFieldMetadata = [
-        {
+        {   id:1,
             name: BLUEPRINT_CARD_PERSONA_STEP,
             isDisabled: true,
             required: true,
-             value: ''
+            value: ''
         },
-        {
+        {    id:2,
             name: BLUEPRINT_CARD_DESCRIPTION,
             isDisabled: false,
-            required: false
+            required: false,
+            value: ''
         },
-        {
+        {    id:3,
             name: BLUEPRINT_CARD_TYPE,
             isDisabled: false,
             required: true
-        },
+        }
     ]
     @track blueprintPersonaStepFieldMetadata = [
-        {
+        {    id:1,
             name: BLUEPRINT_STEP,
             isDisabled: true,
             required: true,
             value: ''
         },
-        {
+        {    id:2,
             name: BLUEPRINT_PERSONA,
             isDisabled: false,
             required: true
@@ -61,7 +63,10 @@ export default class PersonaStepCmp extends LightningElement {
     ]
     @track editRecordId;
     @track formHeading;
-
+    @track isDelete = false;
+    @track deleteTitle = 'Delete Card';
+    @track isDeleteRecordId;
+    @track deleteMessage = 'Are you sure,you want to delete?';
 
 
     /**
@@ -70,6 +75,7 @@ export default class PersonaStepCmp extends LightningElement {
      */
     @wire(getAllPersonaSteps, { stepIds:'$currentStepId' })
     wiredGetAllPersonaSteps(result) {
+        console.log('persona data')
         if(result && result.data){
             this.personaRecordForRefresh = result;
             if(result && result.data && result.data.length>0){
@@ -90,29 +96,40 @@ export default class PersonaStepCmp extends LightningElement {
     processPersonaStepData(data) {
         let result = [];
         let stepToPersonaMap = {};
-        if(data){
-        data.forEach(perStep => {
-            if (Object.keys(stepToPersonaMap).includes(perStep.Blueprint_Step__c)) {
-                stepToPersonaMap[perStep.Blueprint_Step__c].push(perStep);
-            } else {
-                let personaStepArray = [];
-                personaStepArray.push(perStep);
-                stepToPersonaMap[perStep.Blueprint_Step__c] = personaStepArray;
-            }
-        })
-        Object.keys(stepToPersonaMap).forEach(stepRec => {
-            let indexOfStep;
-            for (let i = 0; i < this.currentStepId.length; i++) {
-                if (this.currentStepId[i] === stepRec) {
-                    indexOfStep = i;
-                    break;
+        if (data) {
+            data.forEach(perStep => {
+                if (Object.keys(stepToPersonaMap).includes(perStep.Blueprint_Step__c)) {
+                    stepToPersonaMap[perStep.Blueprint_Step__c].push(perStep);
+                } else {
+                    let personaStepArray = [];
+                    personaStepArray.push(perStep);
+                    stepToPersonaMap[perStep.Blueprint_Step__c] = personaStepArray;
+                }
+            })
+            Object.keys(stepToPersonaMap).forEach(stepRec => {
+                let indexOfStep;
+                for (let i = 0; i < this.currentStepId.length; i++) {
+                    if (this.currentStepId[i] === stepRec) {
+                        indexOfStep = i;
+                        break;
+                    }
+                }
+                let obj = {};
+                obj.key = indexOfStep;
+                obj.value = stepToPersonaMap[stepRec];
+                result[indexOfStep] = obj;
+            })
+            for(let c=0;c<this.currentStepId.length;c++){
+                if(!result[c]){
+                    let obj={};
+                    obj.key = c;
+                    result[c]=obj;
                 }
             }
-            result[indexOfStep] = stepToPersonaMap[stepRec];
-        })
         }
         return result;
     }
+
 
     /**
      * Refresh the component
@@ -131,6 +148,7 @@ export default class PersonaStepCmp extends LightningElement {
             this.isModalOpen = false;
             this.metadata = null;
             this.apiName='';
+            this.editRecordId = null;
         }
     }
 
@@ -211,8 +229,9 @@ export default class PersonaStepCmp extends LightningElement {
                 })
                 .catch(err => {
                     console.log('err' + err)
-                    this.showSpinner = false;
-                })
+                }).finally(()=>{
+                this.showSpinner = false;
+            })
         }
     }
 
@@ -299,8 +318,9 @@ export default class PersonaStepCmp extends LightningElement {
                     },1000)
                 }
             }).catch((err)=>{
-                this.showSpinner = false;
                 console.log('err',err);
+        }).finally(()=>{
+            this.showSpinner = false;
         })
     }
 
@@ -309,8 +329,9 @@ export default class PersonaStepCmp extends LightningElement {
      * @param event
      */
     createFormForNewPersona(event){
-        if(this.apiName){
-            this.apiName = '';
+        if (this.apiName || this.editRecordId) {
+            this.apiName = null;
+            this.editRecordId = null;
         }
         this.apiName = this.blueprintPersonaStepApiName;
         let currentIndex = event.currentTarget && event.currentTarget.dataset?event.currentTarget.dataset.id:'';
@@ -318,7 +339,7 @@ export default class PersonaStepCmp extends LightningElement {
         if (personastepId) {
             this.isModalOpen = true;
             this.blueprintPersonaStepFieldMetadata.forEach(data => {
-                if (data.name.fieldApiName === this.BLUEPRINTSTEP) {
+                if (data.name && data.name.fieldApiName === this.BLUEPRINTSTEP) {
                     if(data.value){
                         data.value='';
                     }
@@ -356,6 +377,44 @@ export default class PersonaStepCmp extends LightningElement {
                     console.log('err' + err)
                     this.showSpinner = false;
                 })
+        }
+    }
+    /**
+     * Set delete record Id.
+     * @param event
+     */
+    handleRecordDelete(event){
+        this.isDelete = true;
+        let recordId = event.target && event.target.dataset.id ? event.target.dataset.id : '';
+        if(this.isDeleteRecordId){
+            this.isDeleteRecordId = null;
+        }
+        this.isDeleteRecordId = recordId;
+    }
+    /**
+     * handle deletion of card record.
+     * @param event
+     */
+    deleteRecord(event){
+        if(event.detail && event.detail.isDelete && event.detail.deleteId){
+            deleteCardRecord({deleteId:event.detail.deleteId}).then(response=>{
+                if(response){
+                    this.isDelete = false;
+                    console.log('delete window');
+                    this.closeModal(event);
+                   this.refreshOnDragDrop(event);
+                    this.dispatchEvent(new CustomEvent('refreshprimarycard', {
+                        detail: true
+                    }))
+                }
+            }).catch(error=>{
+                console.log('error',error);
+            })
+        }
+    }
+    handleClose(event){
+        if(event.detail){
+            this.isDelete = false;
         }
     }
 }

@@ -79,37 +79,37 @@ export default class PersonaStepComponent extends LightningElement {
      * Set delete record Id.
      * @param event
      */
-    handleRecordDelete(event){
-        this.isDelete = true;
-        let recordId = event.target && event.target.dataset.id ? event.target.dataset.id : '';
-        if(this.isDeleteRecordId){
-            this.isDeleteRecordId = null;
-        }
-        this.isDeleteRecordId = recordId;
-    }
+    // handleRecordDelete(event){
+    //     this.isDelete = true;
+    //     let recordId = event.target && event.target.dataset.id ? event.target.dataset.id : '';
+    //     if(this.isDeleteRecordId){
+    //         this.isDeleteRecordId = null;
+    //     }
+    //     this.isDeleteRecordId = recordId;
+    // }
 
-    handleClose(event){
-        if(event.detail){
-            this.isDelete = false;
-        }
-    }
+    // handleClose(event){
+    //     if(event.detail){
+    //         this.isDelete = false;
+    //     }
+    // }
 
-    /**
-     * handle deletion of card record.
-     * @param event
-     */
-    deleteRecord(event){
-      if(event.detail && event.detail.isDelete && event.detail.deleteId){
-          deleteCardRecord({deleteId:event.detail.deleteId}).then(response=>{
-              if(response){
-                  this.isDelete = false;
-                  this.dispatchEvent(new CustomEvent('refreshdragdrop',{
-                      detail: true
-                  }))
-              }
-          }).catch(error=>{
-              console.log('error',error);
-          })
-      }
-    }
+    // /**
+    //  * handle deletion of card record.
+    //  * @param event
+    //  */
+    // deleteRecord(event){
+    //   if(event.detail && event.detail.isDelete && event.detail.deleteId){
+    //       deleteCardRecord({deleteId:event.detail.deleteId}).then(response=>{
+    //           if(response){
+    //               this.isDelete = false;
+    //               this.dispatchEvent(new CustomEvent('refreshdragdrop',{
+    //                   detail: true
+    //               }))
+    //           }
+    //       }).catch(error=>{
+    //           console.log('error',error);
+    //       })
+    //   }
+    // }
 }
