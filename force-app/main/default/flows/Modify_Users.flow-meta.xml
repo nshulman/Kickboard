@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <choices>
         <name>ActivateUserChoice</name>
         <choiceText>Activate Users</choiceText>
@@ -99,11 +99,13 @@
                 <leftValueReference>Action_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>RemoveUserFromSwimLane_Choice</elementReference>
+                    <elementReference
+                    >RemoveUserFromSwimLane_Choice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>RemoveUserFromSwimLane_Subflow</targetReference>
+                <targetReference
+                >RemoveUserFromSwimLane_Subflow</targetReference>
             </connector>
             <label>OutcomeIs RemoveUserFromSwimLane</label>
         </rules>
@@ -114,11 +116,13 @@
                 <leftValueReference>Action_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>GetSwimLaneAccessDetails_Choice</elementReference>
+                    <elementReference
+                    >GetSwimLaneAccessDetails_Choice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetSwimLaneAccessDetails_Subflow</targetReference>
+                <targetReference
+                >GetSwimLaneAccessDetails_Subflow</targetReference>
             </connector>
             <label>OutcomeIs GetSwimLaneAccessDetails</label>
         </rules>
@@ -170,7 +174,8 @@
         </fields>
         <fields>
             <name>ModfyUserNote_DisplayText</name>
-            <fieldText>&lt;p&gt;Please note when sharing to an internal user (i.e. not a guest), only the owner of the record can share the record.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Please note when sharing to an internal user (i.e. not a guest), only the owner of the record can share the record.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

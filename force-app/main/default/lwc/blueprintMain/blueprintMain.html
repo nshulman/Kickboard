@@ -1,21 +1,35 @@
 <template>
-    <div class="slds-path slds-m-bottom_small">
+    <div class="slds-path slds-var-m-bottom_small">
         <div class="slds-grid slds-path__track">
             <div class="slds-grid slds-path__scroller-container">
                 <div class="slds-path__scroller">
                     <div class="slds-path__scroller_inner">
-                        <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
-                            <template for:each={stageArray} for:item="path" >
-                                <li key={path} class="slds-path__item slds-is-current slds-is-active"
-                                    role="presentation">
-                                    <a aria-selected="true" class="slds-path__link" href="#" role="option">
+                        <ul
+                            class="slds-path__nav"
+                            role="listbox"
+                            aria-orientation="horizontal"
+                        >
+                            <template for:each={stageArray} for:item="path">
+                                <li
+                                    key={path}
+                                    class="slds-path__item slds-is-current slds-is-active"
+                                    role="presentation"
+                                >
+                                    <a
+                                        aria-selected="true"
+                                        class="slds-path__link"
+                                        href="#"
+                                        role="option"
+                                    >
                                         <span class="slds-path__stage">
-                                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
-                                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#custom1">
-                                                </use>
-                                            </svg>
+                                            <svg
+                                                class="slds-icon slds-icon_x-small"
+                                                aria-hidden="true"
+                                            ></svg>
                                         </span>
-                                        <span class="slds-path__title">{path}</span>
+                                        <span class="slds-path__title"
+                                            >{path}</span
+                                        >
                                     </a>
                                 </li>
                             </template>
@@ -25,20 +39,33 @@
             </div>
         </div>
     </div>
-    <div class="slds-grid when-row slds-p-around_xx-small slds-m-bottom_small">
-        <div class="slds-m-horizontal_xxx-small first-col">
-            When?
-        </div>
-        <c-blueprint-component record-id={recordId} onsendsteps={getAllSteps}></c-blueprint-component>
+    <div
+        class="slds-grid when-row slds-var-p-around_xx-small slds-var-m-bottom_small"
+    >
+        <div class="slds-var-m-horizontal_xxx-small first-col">When?</div>
+        <c-blueprint-component
+            record-id={recordId}
+            onsendsteps={getAllSteps}
+        ></c-blueprint-component>
     </div>
     <template if:true={isPersonaStepsVisible}>
-        <div class="primary-persona-row slds-p-around_xx-small slds-m-bottom_small">
-            <c-primary-persona-cmp step-id={stepsRecord}  onsendbpcarddetail={createBlueprintCardFromParent}>
+        <div
+            class="primary-persona-row slds-var-p-around_xx-small slds-var-m-bottom_small"
+        >
+            <c-primary-persona-cmp
+                step-id={stepsRecord}
+                onsendbpcarddetail={createBlueprintCardFromParent}
+            >
             </c-primary-persona-cmp>
         </div>
-        <div class="slds-grid personas-row slds-p-around_xx-small slds-m-bottom_small">
-            <div class="slds-m-horizontal_xxx-small first-col"></div>
-            <c-persona-comopnent current-step-id={stepsRecord}  onrefreshprimarycard={refreshPrimaryPersona}></c-persona-comopnent>
+        <div
+            class="slds-grid personas-row slds-var-p-around_xx-small slds-var-m-bottom_small"
+        >
+            <div class="slds-var-m-horizontal_xxx-small first-col"></div>
+            <c-persona-component
+                current-step-id={stepsRecord}
+                onrefreshprimarycard={refreshPrimaryPersona}
+            ></c-persona-component>
         </div>
     </template>
 </template>

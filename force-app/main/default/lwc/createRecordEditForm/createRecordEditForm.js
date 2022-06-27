@@ -1,58 +1,68 @@
-import { LightningElement, api,track } from 'lwc';
+import { LightningElement, api } from "lwc";
 export default class ChildCmp extends LightningElement {
+    recId;
+    fieldRec;
     @api objectName;
-    @api fieldRecord;
-    @api editRecordId;
-    @track recId;
-     connectedCallback() {
-         console.log('record-deit fieldRecord',this.fieldRecord);
-         console.log('record-deit editRecordId',this.editRecordId);
-         this.recId = this.editRecordId?this.editRecordId:'';
+    @api get fieldRecord() {
+        return this.fieldRec;
+    }
+    set fieldRecord(value) {
+        this.fieldRec = value;
+    }
+    @api get editRecordId() {
+        return this.recId;
+    }
+    set editRecordId(value) {
+        this.recId = value || "";
     }
 
-    handleSubmit(event){
-         if(!this.recId){
+    handleSubmit(event) {
+        if (!this.recId) {
             event.preventDefault();
-            if(Object.keys(event.detail.fields).length>0){
-                let obj={};
+            if (Object.keys(event.detail.fields).length > 0) {
+                let obj = {};
                 obj.objectName = this.objectName.objectApiName;
                 obj.fields = event.detail.fields;
-                this.dispatchEvent(new CustomEvent('formsubmit', {
-                    detail: obj
-                }))
+                this.dispatchEvent(
+                    new CustomEvent("formsubmit", {
+                        detail: obj
+                    })
+                );
             }
         }
-
-
     }
     handelSuccess(event) {
-        if(this.recId || this.fieldRecord || this.objectApiName){
-            this.recId='';
-            this.fieldRecord='';
-            this.objectApiName='';
+        if (this.recId || this.fieldRecord || this.objectApiName) {
+            this.recId = "";
+            this.fieldRec = "";
+            this.objectApiName = "";
         }
         if (event.detail.id) {
-            this.dispatchEvent(new CustomEvent('formsuccess', {
-                detail: event.detail
-            }))
+            this.dispatchEvent(
+                new CustomEvent("formsuccess", {
+                    detail: event.detail
+                })
+            );
         }
-
     }
-    handelError(event) {
-        if(this.recId || this.fieldRecord || this.objectApiName){
-            this.recId='';
-            this.fieldRecord='';
-            this.objectApiName='';
+    handleError(event) {
+        if (this.recId || this.fieldRecord || this.objectApiName) {
+            this.recId = "";
+            this.fieldRec = "";
+            this.objectApiName = "";
         }
+        console.log("err", event.detail);
     }
     closeModalWindow() {
-        if(this.recId || this.fieldRecord || this.objectApiName){
-            this.recId='';
-            this.fieldRecord='';
-            this.objectApiName='';
+        if (this.recId || this.fieldRecord || this.objectApiName) {
+            this.recId = "";
+            this.fieldRec = "";
+            this.objectApiName = "";
         }
-        this.dispatchEvent(new CustomEvent('closemodelwindow', {
-            detail: true
-        }))
+        this.dispatchEvent(
+            new CustomEvent("closemodalwindow", {
+                detail: true
+            })
+        );
     }
 }

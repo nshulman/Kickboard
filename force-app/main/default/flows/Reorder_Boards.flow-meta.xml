@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>NewBoard_Assignment</name>
         <label>NewBoard Assignment</label>
@@ -86,7 +86,7 @@
             <assignToReference>BoardText</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue></stringValue>
+                <stringValue />
             </value>
         </assignmentItems>
         <connector>
@@ -138,7 +138,8 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>NewBoardCollection_UpdateRecords</targetReference>
+                <targetReference
+                >NewBoardCollection_UpdateRecords</targetReference>
             </connector>
             <label>OutcomeIs SaveBoards</label>
         </rules>
@@ -175,7 +176,8 @@
         <collectionReference>NewBoard_RecordCollection</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>NewBoardCollectionTextTemplate_Assignment</targetReference>
+            <targetReference
+            >NewBoardCollectionTextTemplate_Assignment</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>SelectBoard_Screen</targetReference>
@@ -220,7 +222,8 @@
         </connector>
         <fields>
             <name>ReorderBoards_DisplayText</name>
-            <fieldText>&lt;p&gt;Select the boards in the order you would like. When finished, check the save toggle and click next. Keep in mind, only the boards you select will be saved. The rest will not be updated.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Select the boards in the order you would like. When finished, check the save toggle and click next. Keep in mind, only the boards you select will be saved. The rest will not be updated.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -259,7 +262,8 @@
                             <stringValue>Not Yet</stringValue>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn
+                    >UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
@@ -303,7 +307,8 @@
     <textTemplates>
         <name>Board_TextTemplate</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!ReorderBoard_Loop.Order__c}: &lt;/span&gt;&lt;b&gt;{!ReorderBoard_Loop.Name}&lt;/b&gt;&lt;/p&gt;</text>
+        <text
+        >&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!ReorderBoard_Loop.Order__c}: &lt;/span&gt;&lt;b&gt;{!ReorderBoard_Loop.Name}&lt;/b&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>BoardId_Collection</name>

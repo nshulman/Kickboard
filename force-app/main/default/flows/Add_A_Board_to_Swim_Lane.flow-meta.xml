@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>AddCategoryMappingsToCollection_Assignment</name>
         <label>AddCategoryMappingsToCollection Assignment</label>
         <locationX>583</locationX>
         <locationY>832</locationY>
         <assignmentItems>
-            <assignToReference>CategoryMappingsNew_RecordCollection</assignToReference>
+            <assignToReference
+            >CategoryMappingsNew_RecordCollection</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>CategoryMapping_Loop</elementReference>
@@ -30,7 +31,8 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>BoardsAfterRecordCollection_Assignment</targetReference>
+            <targetReference
+            >BoardsAfterRecordCollection_Assignment</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -94,10 +96,12 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>AddCategoryMappingsToCollection_Assignment</targetReference>
+            <targetReference
+            >AddCategoryMappingsToCollection_Assignment</targetReference>
         </connector>
     </assignments>
-    <interviewLabel>Add A Board to Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel
+    >Add A Board to Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Add A Board to Swim Lane</label>
     <loops>
@@ -196,7 +200,8 @@
         <label>BoardsAfter GetRecords</label>
         <locationX>176</locationX>
         <locationY>245</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Board_CreateRecord</targetReference>
         </connector>

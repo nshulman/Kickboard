@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>AutomaticallyActivate_Assignment</name>
         <label>AutomaticallyActivate Assignment</label>
         <locationX>52</locationX>
         <locationY>689</locationY>
         <assignmentItems>
-            <assignToReference>AutomaticallyActivate_Toggle.value</assignToReference>
+            <assignToReference
+            >AutomaticallyActivate_Toggle.value</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>false</booleanValue>
@@ -26,7 +27,8 @@
             <assignToReference>NewUserRecordId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>ExternalLaneUser_CreateRecord</elementReference>
+                <elementReference
+                >ExternalLaneUser_CreateRecord</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -42,7 +44,8 @@
             <assignToReference>NewUserRecordId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>InternalLaneUser_CreateRecord</elementReference>
+                <elementReference
+                >InternalLaneUser_CreateRecord</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -55,14 +58,16 @@
         <locationX>1683</locationX>
         <locationY>702</locationY>
         <defaultConnector>
-            <targetReference>NewUserRecordIdInternal_Assignment</targetReference>
+            <targetReference
+            >NewUserRecordIdInternal_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OutcomeIs_ActivateUser</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>AutomaticallyActivate_Toggle.value</leftValueReference>
+                <leftValueReference
+                >AutomaticallyActivate_Toggle.value</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -84,7 +89,8 @@
             <name>OutcomeIs_AddAnotherUser</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>AddAnotherUser_Toggle.value</leftValueReference>
+                <leftValueReference
+                >AddAnotherUser_Toggle.value</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -109,7 +115,8 @@
             <name>OutcomeIs_ExternalUserDoesNotExist</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>ExternalLaneUser_GetRecord</leftValueReference>
+                <leftValueReference
+                >ExternalLaneUser_GetRecord</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -156,7 +163,8 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Lane_GetRecord.Is_Public__c</leftValueReference>
+                <leftValueReference
+                >Lane_GetRecord.Is_Public__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -181,7 +189,8 @@
             <name>OutcomeIs_InternalUserDoesNotExist</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>InternalLaneUser_GetRecord</leftValueReference>
+                <leftValueReference
+                >InternalLaneUser_GetRecord</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -206,7 +215,8 @@
             <name>OutcomeIs_SendEmail</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>AutomaticallyActivate_Toggle.value</leftValueReference>
+                <leftValueReference
+                >AutomaticallyActivate_Toggle.value</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -231,14 +241,16 @@
             <name>OutcomeIs_UserIsStandard</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>User_GetRecord.Profile.UserType</leftValueReference>
+                <leftValueReference
+                >User_GetRecord.Profile.UserType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Standard</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>AssignKickboardUserPermissionSet_Subflow</targetReference>
+                <targetReference
+                >AssignKickboardUserPermissionSet_Subflow</targetReference>
             </connector>
             <label>OutcomeIs UserIsStandard</label>
         </rules>
@@ -246,33 +258,38 @@
             <name>OutcomeIs_UserIsPortal</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>User_GetRecord.Profile.UserType</leftValueReference>
+                <leftValueReference
+                >User_GetRecord.Profile.UserType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>CustomerSuccess</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>User_GetRecord.Profile.UserType</leftValueReference>
+                <leftValueReference
+                >User_GetRecord.Profile.UserType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PowerCustomerSuccess</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>User_GetRecord.Profile.UserType</leftValueReference>
+                <leftValueReference
+                >User_GetRecord.Profile.UserType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PowerPartner</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>AssignKickboardGuestPermissionSet_Subflow</targetReference>
+                <targetReference
+                >AssignKickboardGuestPermissionSet_Subflow</targetReference>
             </connector>
             <label>OutcomeIs UserIsPortal</label>
         </rules>
     </decisions>
-    <interviewLabel>Add User to Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel
+    >Add User to Swim Lane {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Add User to Swim Lane</label>
     <processMetadataValues>
@@ -300,7 +317,8 @@
         <locationX>620</locationX>
         <locationY>1066</locationY>
         <connector>
-            <targetReference>NewUserRecordIdExternal_Assignment</targetReference>
+            <targetReference
+            >NewUserRecordIdExternal_Assignment</targetReference>
         </connector>
         <inputAssignments>
             <field>Email__c</field>
@@ -311,7 +329,8 @@
         <inputAssignments>
             <field>Is_Active__c</field>
             <value>
-                <elementReference>AutomaticallyActivate_Toggle.value</elementReference>
+                <elementReference
+                >AutomaticallyActivate_Toggle.value</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -340,7 +359,8 @@
         <inputAssignments>
             <field>Is_Active__c</field>
             <value>
-                <elementReference>AutomaticallyActivate_Toggle.value</elementReference>
+                <elementReference
+                >AutomaticallyActivate_Toggle.value</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -363,7 +383,8 @@
         <label>ExternalLaneUser GetRecord</label>
         <locationX>473</locationX>
         <locationY>688</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ExternalUserDoesNotExist_Decision</targetReference>
         </connector>
@@ -391,7 +412,8 @@
         <label>InternalLaneUser GetRecord</label>
         <locationX>1146</locationX>
         <locationY>542</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>InternalUserDoesNotExist_Decision</targetReference>
         </connector>
@@ -419,7 +441,8 @@
         <label>Lane GetRecord</label>
         <locationX>287</locationX>
         <locationY>380</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Internal_Decision</targetReference>
         </connector>
@@ -440,7 +463,8 @@
         <label>User GetRecord</label>
         <locationX>554</locationX>
         <locationY>544</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>UserType_Decision</targetReference>
         </connector>
@@ -489,7 +513,8 @@
                     <stringValue>Nope, I&apos;m done</stringValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -506,7 +531,8 @@
         <allowPause>true</allowPause>
         <fields>
             <name>CantAssignPermissionSet_DisplayText</name>
-            <fieldText>&lt;p&gt;Hmm... for some reason we can&apos;t assign the right permission set to this user. It may be because they are a type of user that we aren&apos;t sure can access Kickboard correctly.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Hmm... for some reason we can&apos;t assign the right permission set to this user. It may be because they are a type of user that we aren&apos;t sure can access Kickboard correctly.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -527,7 +553,8 @@
             <name>External_Email</name>
             <extensionName>flowruntime:email</extensionName>
             <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -547,7 +574,8 @@
         </connector>
         <fields>
             <name>Internal_DisplayText</name>
-            <fieldText>&lt;p&gt;You can invite internal or external collaborator.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;When inviting someone internal, they will be directed to the record and given read sharing access to the Swim Lane.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;External collaborators will be directed to a public facing site (if set) and have to enter their email address and code assigned to swim lane.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;When you activate the user, they will be sent an email to the swim lane. If you want to activate later, leave the toggle off.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;You can invite internal or external collaborator.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;When inviting someone internal, they will be directed to the record and given read sharing access to the Swim Lane.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;External collaborators will be directed to a public facing site (if set) and have to enter their email address and code assigned to swim lane.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;When you activate the user, they will be sent an email to the swim lane. If you want to activate later, leave the toggle off.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -557,7 +585,8 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Are you adding a standard or community user?</stringValue>
+                    <stringValue
+                    >Are you adding a standard or community user?</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -578,7 +607,8 @@
                     <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -589,7 +619,8 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Would you like to automatically activate and send email?</stringValue>
+                    <stringValue
+                    >Would you like to automatically activate and send email?</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -604,7 +635,8 @@
                     <stringValue>I will do it later.</stringValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -617,7 +649,8 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>AutomaticallyActivate_Toggle.value</leftValueReference>
+                    <leftValueReference
+                    >AutomaticallyActivate_Toggle.value</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -667,7 +700,8 @@
                     <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -684,7 +718,8 @@
         <allowPause>true</allowPause>
         <fields>
             <name>InternalUserExists_DisplayText</name>
-            <fieldText>&lt;p&gt;Well, well, well... it looks like this user is already in the swimming in the lane with you.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Well, well, well... it looks like this user is already in the swimming in the lane with you.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -703,7 +738,8 @@
         </connector>
         <fields>
             <name>AddToSwimLane_DisplayText</name>
-            <fieldText>&lt;p&gt;Ok, we&apos;ve made sure that user has permissions to view Kickboard. Now, we will add the user to this Swim Lane. &lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Ok, we&apos;ve made sure that user has permissions to view Kickboard. Now, we will add the user to this Swim Lane. &lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -722,7 +758,8 @@
         </connector>
         <fields>
             <name>SwimLaneNotPublic_DisplayText</name>
-            <fieldText>&lt;p&gt;Ok... Swim Lane is not marked public. That means an external collaborator will not be able to access until it&apos;s marked as public.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We can add the user as inactive right now and will not send an email. If that&apos;s ok, click next. Later, mark this swim lane as public, activate this user, and send an email.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Ok... Swim Lane is not marked public. That means an external collaborator will not be able to access until it&apos;s marked as public.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We can add the user as inactive right now and will not send an email. If that&apos;s ok, click next. Later, mark this swim lane as public, activate this user, and send an email.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -808,7 +845,8 @@
         <locationX>1834</locationX>
         <locationY>787</locationY>
         <connector>
-            <targetReference>NewUserRecordIdInternal_Assignment</targetReference>
+            <targetReference
+            >NewUserRecordIdInternal_Assignment</targetReference>
         </connector>
         <flowName>Share_Lane_to_User</flowName>
         <inputAssignments>

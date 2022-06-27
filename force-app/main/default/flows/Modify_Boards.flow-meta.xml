@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <choices>
         <name>AddBoardFromTemplateChoice</name>
         <choiceText>Add a Board from a Template</choiceText>
@@ -70,11 +70,13 @@
                 <leftValueReference>SelectAction_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>AddCardsFromAnotherBoard_Choice</elementReference>
+                    <elementReference
+                    >AddCardsFromAnotherBoard_Choice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>AddCardsFromAnotherBoard_Subflow</targetReference>
+                <targetReference
+                >AddCardsFromAnotherBoard_Subflow</targetReference>
             </connector>
             <label>OutcomeIs AddCardsFromAnotherBoard</label>
         </rules>
@@ -85,7 +87,8 @@
                 <leftValueReference>SelectAction_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>AddBoardFromTemplateChoice</elementReference>
+                    <elementReference
+                    >AddBoardFromTemplateChoice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -100,11 +103,13 @@
                 <leftValueReference>SelectAction_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>MoveBoardToAnotherSwimLane_Choice</elementReference>
+                    <elementReference
+                    >MoveBoardToAnotherSwimLane_Choice</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>MoveBoardToAnotherSwimLane_Flow</targetReference>
+                <targetReference
+                >MoveBoardToAnotherSwimLane_Flow</targetReference>
             </connector>
             <label>OutcomeIs MoveBoardToAnotherSwimLane</label>
         </rules>
@@ -149,7 +154,8 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CloneBoardFromSwimLane_Subflow</targetReference>
+                <targetReference
+                >CloneBoardFromSwimLane_Subflow</targetReference>
             </connector>
             <label>OutcomeIs CloneBoard</label>
         </rules>
@@ -206,7 +212,8 @@
             <name>SelectAction_Picklist</name>
             <choiceReferences>AddCardsFromAnotherBoard_Choice</choiceReferences>
             <choiceReferences>AddBoardFromTemplateChoice</choiceReferences>
-            <choiceReferences>MoveBoardToAnotherSwimLane_Choice</choiceReferences>
+            <choiceReferences
+            >MoveBoardToAnotherSwimLane_Choice</choiceReferences>
             <choiceReferences>ReorderBoardsChoice</choiceReferences>
             <choiceReferences>UploadImage_Choice</choiceReferences>
             <choiceReferences>CloneBoard_Choice</choiceReferences>

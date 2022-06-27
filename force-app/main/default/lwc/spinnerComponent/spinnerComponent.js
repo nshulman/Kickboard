@@ -1,4 +1,3 @@
-import { LightningElement,api } from 'lwc';
+import { LightningElement } from "lwc";
 
-export default class SpinnerComponent extends LightningElement {
-}
+export default class SpinnerComponent extends LightningElement {}

@@ -2,36 +2,73 @@
     <div class="slds-grid">
         <template if:true={allStepsData}>
             <template for:each={allStepsData} for:item="step" for:index="index">
-                <div key={step.Name} draggable="true" data-id={step.Id} data-name={step.Blueprint__c} ondragstart={handleStepDrag} ondrop={handleStepDrop}
-                     ondragover={handleStepDragover} class="slds-grid slds-grid_vertical steps-column slds-m-horizontal_xxx-small" >
+                <div
+                    key={step.Name}
+                    draggable="true"
+                    data-id={step.Id}
+                    data-name={step.Blueprint__c}
+                    ondragstart={handleStepDrag}
+                    ondrop={handleStepDrop}
+                    ondragover={handleStepDragover}
+                    class="slds-grid slds-grid_vertical steps-column slds-var-m-horizontal_xxx-small"
+                >
                     <div class="steps-buttons--group slds-grid_reverse">
-                        <button class="slds-button add-button " key={step.Name} data-order={step.Order__c}
-                                onclick={createMetadataForStep}>+</button>
-                        <button  data-order={index} title={step.Name}
-                                class="slds-button slds-button_outline-brand steps-button">{step.Name}</button>
+                        <button
+                            class="slds-button add-button"
+                            key={step.Name}
+                            data-order={step.Order__c}
+                            onclick={createMetadataForStep}
+                        >
+                            +
+                        </button>
+                        <button
+                            data-order={index}
+                            title={step.Name}
+                            class="slds-button slds-button_outline-brand steps-button"
+                        >
+                            {step.Name}
+                        </button>
                     </div>
                 </div>
             </template>
         </template>
     </div>
     <template if:true={isModalOpen}>
-        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
-                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open"
+        >
             <div class="slds-modal__container">
                 <header class="slds-modal__header">
-                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
-                            title="Close" onclick={closeModal}>
-                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
-                                        size="small"></lightning-icon>
+                    <button
+                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        onclick={closeModal}
+                    >
+                        <lightning-icon
+                            icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small"
+                        ></lightning-icon>
                         <span class="slds-assistive-text">Close</span>
                     </button>
                     <div>{CREATE_NEW_STEP}</div>
-
                 </header>
                 <template if:true={formMetadata}>
-                    <c-create-record-edit-form  object-name={blueprintStepApiName} edit-record-id={editRecordId}
-                                                field-record={formMetadata} style="background-color:white;" onformsubmit={createBlueprintStep}
-                                                onformsuccess= {stepCreationSuccess} onclosemodelwindow={closeModal}>
+                    <c-create-record-edit-form
+                        object-name={blueprintStepApiName}
+                        edit-record-id={editRecordId}
+                        field-record={formMetadata}
+                        style="background-color: white"
+                        onformsubmit={createBlueprintStep}
+                        onformsuccess={stepCreationSuccess}
+                        onclosemodalwindow={closeModal}
+                    >
                     </c-create-record-edit-form>
                 </template>
             </div>
