@@ -61,7 +61,7 @@ export default class PersonaStepCmp extends LightningElement {
     @track isDelete = false;
     @track deleteTitle = "Delete Card";
     @track isDeleteRecordId;
-    @track deleteMessage = "Are you sure,you want to delete?";
+    @track deleteMessage = "Are you sure you want to delete?";
 
     /**
      * Get all persona step data
@@ -69,7 +69,6 @@ export default class PersonaStepCmp extends LightningElement {
      */
     @wire(getAllPersonaSteps, { stepIds: "$currentStepId" })
     wiredGetAllPersonaSteps(result) {
-        console.log("persona data");
         if (result && result.data) {
             this.personaRecordForRefresh = result;
             if (result && result.data && result.data.length > 0) {
@@ -441,7 +440,6 @@ export default class PersonaStepCmp extends LightningElement {
                 .then((response) => {
                     if (response) {
                         this.isDelete = false;
-                        console.log("delete window");
                         this.closeModal(event);
                         this.refreshOnDragDrop(event);
                         this.dispatchEvent(

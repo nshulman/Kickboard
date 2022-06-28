@@ -34,7 +34,7 @@
                                             class="slds-card persona-style"
                                         >
                                             <div
-                                                class="slds-text-align_center persona-font slds-text-heading_small slds-var-p-around_small"
+                                                class="slds-text-align_center slds-text-heading_small slds-var-p-around_small"
                                             >
                                                 {perStep.Blueprint_Persona__r.Name}
                                             </div>
@@ -131,14 +131,14 @@
         </section>
         <div class="slds-backdrop slds-backdrop_open"></div>
     </template>
-    <template if:true={isDelete}>
+    <!-- <template if:true={isDelete}> -->
         <c-message-box
             is-modal-open={isDelete}
-            model-header={deleteTitle}
-            model-message={deleteMessage}
+            modal-header={deleteTitle}
+            modal-message={deleteMessage}
             delete-record-id={isDeleteRecordId}
             ondelete={deleteRecord}
             onclosedelete={handleClose}
         ></c-message-box>
-    </template>
+    <!-- </template> -->
 </template>

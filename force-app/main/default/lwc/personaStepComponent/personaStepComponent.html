@@ -52,14 +52,14 @@
     <template if:true={showSpinner}>
         <c-spinner-component></c-spinner-component>
     </template>
-    <template if:true={isDelete}>
+    <!-- <template if:true={isDelete}> -->
         <c-message-box
             is-modal-open={isDelete}
-            model-header={deleteTitle}
-            model-message={deleteMessage}
+            modal-header={deleteTitle}
+            modal-message={deleteMessage}
             delete-record-id={isDeleteRecordId}
             ondelete={deleteRecord}
             onclosedelete={handleClose}
         ></c-message-box>
-    </template>
+    <!-- </template> -->
 </template>

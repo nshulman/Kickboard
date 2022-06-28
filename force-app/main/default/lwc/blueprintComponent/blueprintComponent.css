@@ -22,6 +22,8 @@
 .steps-button{
     min-height: 70px;
     width: 100%;
+    color: #0176d3;
+    border-color: #78b0fd;
     background-color: var(--slds-c-button-color-background);
 }
 .steps-buttons--group{

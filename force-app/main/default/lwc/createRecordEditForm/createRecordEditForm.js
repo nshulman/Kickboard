@@ -51,7 +51,6 @@ export default class ChildCmp extends LightningElement {
             this.fieldRec = "";
             this.objectApiName = "";
         }
-        console.log("err", event.detail);
     }
     closeModalWindow() {
         if (this.recId || this.fieldRecord || this.objectApiName) {

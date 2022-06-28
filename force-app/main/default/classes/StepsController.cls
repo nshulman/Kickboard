@@ -46,6 +46,7 @@ public class StepsController {
                     AND Order__c >= :orderValue + 1
             ]) {
                 // Step cannot be null
+                step.Order__c = step.Order__c+1;
                 updatedSteps.add(step);
             }
             if (updatedSteps.size() > 0) {

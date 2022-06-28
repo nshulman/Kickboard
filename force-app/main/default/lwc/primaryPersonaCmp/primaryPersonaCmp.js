@@ -8,9 +8,7 @@ export default class PrimaryPersonaCmp extends LightningElement {
     @track refreshPrimaryPersonaData;
     @track isRefresh=false;
 
-    connectedCallback() {
-        console.log('primary-persona-step-id',this.stepId);
-    }
+  
 
     /**
      * Get primary persona records and process the records.
@@ -24,7 +22,6 @@ export default class PrimaryPersonaCmp extends LightningElement {
             if (primaryData.length>0) {
                 this.processedPrimaryPersona = this.processPrimaryPersonaData(primaryData);
                 this.primaryPersonaName = primaryData[0] && primaryData[0].Blueprint_Persona__r ? primaryData[0].Blueprint_Persona__r.Name: '';
-                console.log('processedPrimaryPersona',this.processedPrimaryPersona);
             }
         }else if(result.error){
             console.log('Error',result.error);
