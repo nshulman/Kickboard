@@ -1,36 +1,44 @@
 <template>
     <div class="slds-grid">
-        <template if:true={allStepsData}>
-            <template for:each={allStepsData} for:item="step" for:index="index">
-                <div
-                    key={step.Name}
-                    draggable="true"
-                    data-id={step.Id}
-                    data-name={step.Blueprint__c}
-                    ondragstart={handleStepDrag}
-                    ondrop={handleStepDrop}
-                    ondragover={handleStepDragover}
-                    class="slds-grid slds-grid_vertical steps-column slds-var-m-horizontal_xxx-small"
-                >
-                    <div class="steps-buttons--group slds-grid_reverse">
-                        <button
-                            class="slds-button add-button"
-                            key={step.Name}
-                            data-order={step.Order__c}
-                            onclick={createMetadataForStep}
-                        >
-                            +
-                        </button>
-                        <button
-                            data-order={index}
-                            title={step.Name}
-                            class="slds-button slds-button_outline-brand steps-button"
-                        >
-                            {step.Name}
-                        </button>
-                    </div>
+        <label></label>
+        <div class="steps-buttons--group slds-grid_reverse">
+            <!-- <button
+                class="slds-button static-add-button"
+                data-order="0"
+                onclick={createMetadataForStep}
+            >
+                +
+            </button> -->
+        </div>
+        <template for:each={allStepsData} for:item="step" for:index="index">
+            <div
+                key={step.Name}
+                draggable="true"
+                data-id={step.Id}
+                data-name={step.Blueprint__c}
+                ondragstart={handleStepDrag}
+                ondrop={handleStepDrop}
+                ondragover={handleStepDragover}
+                class="slds-grid slds-grid_vertical steps-column slds-var-m-horizontal_xxx-small"
+            >
+                <div class="steps-buttons--group slds-grid_reverse">
+                    <button
+                        class="slds-button add-button"
+                        key={step.Name}
+                        data-order={step.Order__c}
+                        onclick={createMetadataForStep}
+                    >
+                        +
+                    </button>
+                    <button
+                        data-order={index}
+                        title={step.Name}
+                        class="slds-button slds-button_outline-brand steps-button"
+                    >
+                        {step.Name}
+                    </button>
                 </div>
-            </template>
+            </div>
         </template>
     </div>
     <template if:true={isModalOpen}>

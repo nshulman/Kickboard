@@ -24,7 +24,6 @@
                             title="Edit"
                             onclick={handleRecordEdit}
                         ></lightning-icon>
-                        <!--                        <lightning-icon data-id={step.Id}  icon-name="action:delete" size="xx-small" alternative-text="delete" class="slds-float_right my-icon" title="Delete" onclick={handleRecordDelete}></lightning-icon>-->
                     </div>
                 </template>
                 <div class="slds-var-p-bottom_x-small" data-id={step.Id}>
@@ -53,13 +52,13 @@
         <c-spinner-component></c-spinner-component>
     </template>
     <!-- <template if:true={isDelete}> -->
-        <c-message-box
-            is-modal-open={isDelete}
-            modal-header={deleteTitle}
-            modal-message={deleteMessage}
-            delete-record-id={isDeleteRecordId}
-            ondelete={deleteRecord}
-            onclosedelete={handleClose}
-        ></c-message-box>
+    <c-message-box
+        is-modal-open={isDelete}
+        modal-header={deleteTitle}
+        modal-message={deleteMessage}
+        delete-record-id={isDeleteRecordId}
+        ondelete={deleteRecord}
+        onclosedelete={handleClose}
+    ></c-message-box>
     <!-- </template> -->
 </template>
