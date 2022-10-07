@@ -131,22 +131,82 @@
             <targetReference>Create_Persona</targetReference>
         </connector>
         <fields>
-            <name>Step_Text</name>
-            <fieldText
-            >&lt;p&gt;Now that you have created your {!Persona_Name} Persona, you&apos;ll need to add the first step to your blueprint.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://connect-java-32-dev-ed.file.force.com/sfc/servlet.shepherd/version/download/0680t000002iUE2?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;&lt;p&gt;Once you&apos;ve finished, you&apos;ll be able to start building your blueprint, and adding more Steps and Personas!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Step_Name</name>
-            <dataType>String</dataType>
-            <fieldText>Step Name</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Step_Description</name>
-            <fieldText>Step Description</fieldText>
-            <fieldType>LargeTextArea</fieldType>
+            <name>Add_Step_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Add_Step_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Step_Text</name>
+                    <fieldText
+                    >&lt;p&gt;Now that you have created your {!Persona_Name} Persona, you&apos;ll need to add the first step to your blueprint.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Step2_Image</name>
+                    <extensionName>flowruntime:image</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>imageName</name>
+                        <value>
+                            <stringValue>Step2</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>imageAlt</name>
+                        <value>
+                            <stringValue>Creating a Step</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>horizontalAlignment</name>
+                        <value>
+                            <stringValue>center</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn
+                    >UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>txt_bottom</name>
+                    <fieldText
+                    >&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Once you&apos;ve finished, you&apos;ll be able to start building your blueprint, and adding more Steps and Personas!&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Add_Step_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Step_Name</name>
+                    <dataType>String</dataType>
+                    <fieldText>Step Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Step_Description</name>
+                    <fieldText>Step Description</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -176,10 +236,31 @@
                 <name>Blueprint_Getting_Started_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Example</name>
-                    <fieldText
-                    >&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;&lt;img src=&quot;https://connect-java-32-dev-ed.file.force.com/sfc/servlet.shepherd/version/download/0680t000002iUDc?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;image.png&quot;&gt;&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>Persona_Step_1</name>
+                    <extensionName>flowruntime:image</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>imageName</name>
+                        <value>
+                            <stringValue>PersonaStep1</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>imageAlt</name>
+                        <value>
+                            <stringValue>Persona Step 1 Image</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>horizontalAlignment</name>
+                        <value>
+                            <stringValue>center</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn
+                    >UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <inputParameters>
                     <name>width</name>

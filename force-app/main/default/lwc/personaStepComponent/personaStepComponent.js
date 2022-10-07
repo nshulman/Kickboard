@@ -3,20 +3,27 @@ import handleDragAndDrop from "@salesforce/apex/personaStep.handleDragAndDrop";
 // import deleteCardRecord from "@salesforce/apex/personaStep.deleteCardRecord";
 export default class PersonaStepComponent extends LightningElement {
     @track personas = [];
+
     @api
     get personaStepData() {
         return this.personas;
     }
+
     set personaStepData(value) {
         // recreate the array and values and lose the proxy
         this.personas = Array.isArray(value)
             ? value.map((x) => ({ ...x }))
             : [];
     }
+
     @track showSpinner = false;
+
     @track isDelete = false;
+
     @track deleteTitle = "Delete Card";
+
     @track isDeleteRecordId;
+
     @track deleteMessage = "Are you sure you want to delete?";
 
     /**
@@ -70,6 +77,7 @@ export default class PersonaStepComponent extends LightningElement {
     allowDrop(event) {
         event.preventDefault();
     }
+
     /**
      * check wether drag and drop is happen under same persona-step.
      * @param event
@@ -85,6 +93,7 @@ export default class PersonaStepComponent extends LightningElement {
             this.runDragAndDrop(dragId, dropCardId, dropCardPSId);
         }
     }
+
     handleRecordEdit(event) {
         let recordId = event.currentTarget.dataset.id;
         let obj = {};
