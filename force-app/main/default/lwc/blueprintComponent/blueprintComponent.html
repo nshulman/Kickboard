@@ -10,6 +10,21 @@
                 +
             </button> -->
         </div>
+
+        <!-- for first step -->
+        <template if:true={showFirstStep}>
+            <div class="steps-buttons--group slds-grid_reverse">
+                <button
+                    class="slds-button static-add-button"
+                    data-order="0"
+                    title="Add Step"
+                    onclick={createMetadataForStep}
+                >
+                    <label>+</label>
+                </button>
+            </div>
+        </template>
+
         <template for:each={allStepsData} for:item="step" for:index="index">
             <div
                 key={step.Name}

@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 import { LightningElement, track, api, wire } from "lwc";
 import { getPicklistValues } from "lightning/uiObjectInfoApi";
 import { getObjectInfo } from "lightning/uiObjectInfoApi";
@@ -6,7 +7,7 @@ import STEP_STAGE from "@salesforce/schema/Blueprint_Step__c.Stage__c";
 export default class BlueprintMain extends LightningElement {
     @api recordId;
     @track stageArray = [];
-    @track isPersonaStepsVisible = false;
+    @track showPersonaSteps = false;
     @track stepsRecord;
     @track allValues = [];
     @wire(getObjectInfo, { objectApiName: STEP_OBJECT })
@@ -18,12 +19,14 @@ export default class BlueprintMain extends LightningElement {
     })
     stages({ error, data }) {
         if (data) {
-            let localArray = [];
             this.allValues = data.values;
-            this.allValues.forEach(function (step) {
-                localArray.push(step.value);
-            });
-            this.stageArray = localArray;
+            this.stageArray = this.allValues.map((x) => x.value);
+            // let localArray = [];
+            // this.allValues = data.values;
+            // this.allValues.forEach(function (step) {
+            //     localArray.push(step.value);
+            // });
+            // this.stageArray = localArray;
         } else if (error) {
             this.stageArray = [];
         }
@@ -35,17 +38,20 @@ export default class BlueprintMain extends LightningElement {
      * @param event
      */
     getAllSteps(event) {
-        this.isPersonaStepsVisible = true;
-        if (this.stepsRecord && this.stepsRecord.length > 0) {
+        this.showPersonaSteps = true;
+        if (this.stepsRecord?.length > 0) {
             this.stepsRecord = null;
         }
-        let data = [];
         if (event.detail) {
-            event.detail.forEach((e) => {
-                data.push(e.Id);
-            });
-            this.stepsRecord = data;
+            this.stepsRecord = event.detail.map((x) => x.Id);
         }
+        // let data = [];
+        // if (event.detail) {
+        //     event.detail.forEach((e) => {
+        //         data.push(e.Id);
+        //     });
+        //     this.stepsRecord = data;
+        // }
     }
 
     /**

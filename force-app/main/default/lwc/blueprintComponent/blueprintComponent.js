@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 import { LightningElement, track, wire, api } from "lwc";
 import getSteps from "@salesforce/apex/StepsController.getSteps";
 import BLUEPRINT_STEP_NAME from "@salesforce/schema/Blueprint_Step__c.Name";
@@ -17,6 +18,10 @@ export default class BlueprintComponent extends LightningElement {
     @track isModalOpen = false;
     @track currentStepOrder;
     @track blueprintStepApiName = BLUEPRINT_STEP_OBJECT;
+    get showFirstStep() {
+        // will be true if allStepsData is null or 0 length array
+        return !(this.allStepsData?.length > 0);
+    }
     formMetadata = [
         {
             id: 1,
@@ -86,7 +91,7 @@ export default class BlueprintComponent extends LightningElement {
     }
 
     /**
-     * close model window
+     * close modal window
      * @param event
      */
     closeModal(event) {
