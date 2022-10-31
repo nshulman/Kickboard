@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <decisions>
         <name>MakePublic_Decision</name>
         <label>MakePublic Decision</label>
@@ -23,7 +23,8 @@
             <label>OutcomeIs MakePublic</label>
         </rules>
     </decisions>
-    <interviewLabel>Make Swim Lane Public {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel
+    >Make Swim Lane Public {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Make Swim Lane Public</label>
     <processMetadataValues>
@@ -82,7 +83,8 @@
         </connector>
         <fields>
             <name>MakePublic_DisplayText</name>
-            <fieldText>&lt;p&gt;By marking this Swim Lane public it will be shared to the Kickboard Site Guest User as long as that sharing rule was created. We will also attempt to set to back to not public in the number of hours you set. This is to ensure it is not unnecessarily shared. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can only increase to 3 hours. More than that will automatically set it back to not public.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;By marking this Swim Lane public it will be shared to the Kickboard Site Guest User as long as that sharing rule was created. We will also attempt to set to back to not public in the number of hours you set. This is to ensure it is not unnecessarily shared. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can only increase to 3 hours. More than that will automatically set it back to not public.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -107,7 +109,8 @@
                     <stringValue>Nope</stringValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>

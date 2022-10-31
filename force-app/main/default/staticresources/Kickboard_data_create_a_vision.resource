@@ -1,0 +1,1671 @@
+{
+    "graphId" : "1",
+    "compositeRequest" : [
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Lane__c/",
+            "body" : {
+                "Name" : "Create a Vision for Success TEMPLATE v1.1",
+                "__namespace__Description__c" : "<p>Use this swim lane to create a vision and how to measure success for your digital transformation initiative. </p><p><br></p><p>Each board is roughly 25m and is ideal for a collaborative group of 6 to 8 people. Additionally, consider completing the stakeholders board to inform whom to invite to collaborate in following activities.</p>",
+                "__namespace__Is_Template__c" : true
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_laneid_1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Introduction",
+                "__namespace__Description__c" : "<p>Use this board to introduce yourself to fellow collaborators.</p>",
+                "__namespace__Order__c" : 1,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/introduction.png",
+                "__namespace__Instructions__c" : "<ol><li>Create a new card and add your name, role and write your favorite<ol><li>Beaches</li><li>Mountains</li><li>Lakes</li></ol></li><li>Peruse and familiarize yourself with what boards are available by selecting an item from the select board drop down menu.</li><li>Expand Details on each board to understand the objective, prerequisites, and instructions.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Introduce yourself.</li><li>Test that you can add and edit cards.</li></ul>",
+                "__namespace__Prerequisites__c" : "<p>No prerequisites.</p>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 5,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_introduction"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Define Your Problem Statement",
+                "__namespace__Description__c" : "<p>Use this board to define your problem statement and use as a guide in following activities.</p>",
+                "__namespace__Order__c" : 2,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/problem-statement.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any thoughts for each of the questions.</li><li>For 10m, as a group decide on final answers and write down. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of a problem.</li><li>Create a clear and concise description of the problem you would like to tackle.</li></ul>",
+                "__namespace__Prerequisites__c" : "<p>No prerequisites.</p>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_problem"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Identify Stakeholders",
+                "__namespace__Description__c" : "<p>Use this board to determine the stakeholders to involve in creating a vision for success for your initiative.</p>",
+                "__namespace__Order__c" : 3,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/stakeholder-map.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any folks that could potentially be stakeholders.</li><li>For 10m, sort each by interest and influence until the groups is in a agreement. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of all the stakeholders that would potentially have an interest in the problem statement and solutions.</li><li>Understand the influence and interest of various stakeholders to invite in following collaborative boards.</li><li>Use the list of stakeholders to determine who to invite to collaborate on following boards.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A defined and agreed upon problem statement.</li></ul>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_stakeholders"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Persona Profile",
+                "__namespace__Description__c" : "<p>Use this board to create a persona to understand more deeply facts, demographics, obstacles, pain points, goals, motivations, behaviors, and beliefs.</p>",
+                "__namespace__Order__c" : 4,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/persona-profile.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any details about your persona.</li><li>For 10m, discuss the details that have been written. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of a single persona for your initiative.</li><li>Visualize demographics, obstacles, goals, behaviors, and more.</li><li>Use your persona as a guide in developing solutions.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A defined and agreed upon problem statement.</li><li>A selected persona. Ideally, this persona is selected from the stakeholder map.</li></ul>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_persona"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Build an Empathy Map",
+                "__namespace__Description__c" : "<p>Use this board to build empathy and understanding of your target customer.</p>",
+                "__namespace__Order__c" : 5,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/empathy-map.png",
+                "__namespace__Instructions__c" : "<ul><li>For 15m, write down any thoughts for each of the areas of the empathy map.</li><li>For 10m, round robin, each person shares what they wrote and why and then selects the next person to share. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ul>",
+                "__namespace__Objective__c" : "<ul><li>Understand deeply from your customer&#39;s perspective how they think, feel, and what they hear, say and do.</li><li>Create a shared understanding of the pains and gains of a target customer.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A selected target customer or persona.</li></ul>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_empathy"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Identify Jobs To Be Done",
+                "__namespace__Description__c" : "<p>Use this board to focus on the the real &#39;jobs&#39; a customer is trying to accomplish with your solution.</p>",
+                "__namespace__Order__c" : 6,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/jtbd.png",
+                "__namespace__Instructions__c" : "<ul><li>For 15m, write down thoughts in each area of the board.</li><li>For 10m, round robin, each person shares what they wrote and why and then calls on the next person to share. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ul>",
+                "__namespace__Objective__c" : "<ul><li>Capture tasks in a structured way.</li><li>Create a shared understanding of customer needs.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A selected target customer or persona.</li><li>Optionally, an empathy map will help create deeper understanding.</li></ul>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_jtbd"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Discover Your Customer's Journey",
+                "__namespace__Description__c" : "<p>Use this board to understand in detail the touchpoints a customer has with your company and where the biggest gains or pains are happening.</p>",
+                "__namespace__Order__c" : 7,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/customer-journey.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any thoughts in each area of the customer&#39;s journey. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li><li>For 10m, round robin, each person shares what they wrote and why and then calls on the next person to share.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of your customer&#39;s touchpoints or moments that matter.</li><li>Identify areas where you may not be delivering the best customer experience.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A selected target customer or persona</li><li>Optionally, an empathy map and jobs to be done will create deeper conversations.</li></ul>",
+                "__namespace__Design_Stage__c" : "Empathize",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_journey"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Identify Your Anchors & Tailwinds",
+                "__namespace__Description__c" : "<p>Use this board to discuss what obstacles (i.e. anchors) you are encountering in delivering an ideal customer experience. Additionally, use this board to reframe obstacles as opportunities (i.e. tailwinds).</p>",
+                "__namespace__Order__c" : 8,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/anchors-and-tailwinds.png",
+                "__namespace__Instructions__c" : "<ol><li>For 10m, first write down anchors at the bottom of the board.</li><li>For 10m, write down tailwinds at the top of the board.</li><li>For 5m, discuss as a group any themes that have emerged. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of the various anchors or obstacles in delivering an ideal customer experience.</li><li>Discover a variety of possible opportunities or tailwinds that can be prioritize and pursued.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A selected target customer or persona</li><li>Optionally, a customer journey will help create deeper conversations.</li></ul>",
+                "__namespace__Design_Stage__c" : "Define",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_anchors"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Prioritize",
+                "__namespace__Description__c" : "<p>Use this board to prioritize as a group what opportunities to pursue or not pursue.</p>",
+                "__namespace__Order__c" : 9,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/prioritize.png",
+                "__namespace__Instructions__c" : "<ol><li>For 20m, add one opportunity at a time, decide where in the matrix it should be placed.</li><li>For 5m, discuss and agree as a group which opportunities to pursue. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared understanding of the opportunities based on value and effort.</li><li>Decide which opportunities are worth pursuing.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A list of unsorted opportunities.</li></ul>",
+                "__namespace__Design_Stage__c" : "Ideate",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_prioritize"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Create Your Vision Statement",
+                "__namespace__Description__c" : "<p>Use this board to define a clear statement of your vision and how to measure success.</p>",
+                "__namespace__Order__c" : 10,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/vision-statement.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any thoughts in the areas of the vision statement.</li><li>For 10m, discuss and agree as a group the final statements in each area. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a shared vision statement and measures of success.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A selected target customer or persona.</li><li>A selected list of opportunities to pursue.</li></ul>",
+                "__namespace__Design_Stage__c" : "Prototype_Test",
+                "__namespace__Time_to_Complete_in_minutes__c" : 25,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_vision"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Define Who Does What When",
+                "__namespace__Description__c" : "<p>Use this board to keep momentum with your shared vision by defining who does what next.</p>",
+                "__namespace__Order__c" : 11,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/who-does-what-when.png",
+                "__namespace__Instructions__c" : "<ol><li>For 10m, write down each stakeholder in the who area and then each person will write down the next steps they will take and a date when it will be accomplished.</li><li>For 5m, discuss as a group if anything is missing or needs to be adjusted. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Create a agreed upon list of folks who will take which next steps by what date.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A shared vision statement and measure of success.</li></ul>",
+                "__namespace__Design_Stage__c" : null,
+                "__namespace__Time_to_Complete_in_minutes__c" : 15,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_whodoeswhat"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Card__c/",
+            "body": {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Description__c" : "<p><b>Navigate Your Journey to Customer 360 Success</b></p><p><a href=\"https://trailhead.salesforce.com/guides\" target=\"_blank\"><b>Get Started with Your First Guide</b></a></p>",
+                "__namespace__X_Position__c" : 71.0,
+                "__namespace__Y_Position__c" : 158.0
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_card_guides"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Board__c/",
+            "body" : {
+                "Name" : "Get Feedback",
+                "__namespace__Description__c" : "<p>Use this board to collect feedback on the whole process and iteratively improve.</p>",
+                "__namespace__Order__c" : 12,
+                "__namespace__Background_Image__c" : "/resource/__namespace__Kickboard_Assets/feedback-grid.png",
+                "__namespace__Instructions__c" : "<ol><li>For 15m, write down any thoughts in the areas provided in the board.</li></ol>",
+                "__namespace__Objective__c" : "<ul><li>Quickly get feedback from participants about what they liked, wish for, what questions they still have, and what could be improved. Mark cards accepted in green, rejected in red, and ones that need revision in blue.</li></ul>",
+                "__namespace__Prerequisites__c" : "<ul><li>A topic to collect feedback on.</li></ul>",
+                "__namespace__Design_Stage__c" : null,
+                "__namespace__Time_to_Complete_in_minutes__c" : 15,
+                "__namespace__Lane__c" : "@{reference_id_laneid_1.id}"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_board_feedback"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_introduction1",
+            "body" : {
+              "__namespace__Board__c" : "@{reference_id_introduction.id}",
+              "__namespace__Type__c" : "Bounding Box",
+              "__namespace__Min_Y_Position__c" : 0,
+              "__namespace__Min_X_Position__c" : 0,
+              "__namespace__Max_Y_Position__c" : 720,
+              "__namespace__Max_X_Position__c" : 1280,
+              "__namespace__Color__c" : null,
+              "__namespace__Category__c" : "Participant"
+            }
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Liked"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Improvement"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Question"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Enhancement"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_feedback.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_feedback8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Think & Feel"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 853,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 426,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "See"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 854,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Pains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Hear"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 853,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 427,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Say & Do"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 854,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Gains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy9"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_empathy.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_empathy10"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 320,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 321,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Situation"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 961,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Insight"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 960,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Motivation"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_jtbd.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_jtbd8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Business Goal"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Subject"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 851,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Consideration"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 850,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 427,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Need"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_problem.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_problem9"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "High Influence, Low Interest"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "High Influence, High Interest"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Low Influence, Low Interest"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Low Influence, High Interest"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_stakeholders.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_stakeholders8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 180,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 541,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Pains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 853,
+                "__namespace__Max_Y_Position__c" : 180,
+                "__namespace__Min_X_Position__c" : 427,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Goal"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 180,
+                "__namespace__Min_X_Position__c" : 854,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Expectation"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 181,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Touchpoints"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 540,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Gains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey9"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_journey.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_journey10"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Tailwind"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Anchor"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_anchors.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_anchors6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "High Value, High Effort"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "High Value, Low Effort"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Low Value, High Effort"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Low Value, Low Effort"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_prioritize.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_prioritize8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Use Case"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 852,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 427,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 360,
+                "__namespace__Min_X_Position__c" : 853,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Job To Be Done"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 426,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Gains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 852,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 427,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Pains"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 853,
+                "__namespace__Min_Y_Position__c" : 361,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Measure"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision9"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_vision.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_vision10"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 144,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Person"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 576,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 145,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Task"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 577,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Due Date"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_whodoeswhat.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_whodoeswhat7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "yellow",
+                "__namespace__Category__c" : "Draft"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona1"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "green",
+                "__namespace__Category__c" : "Accepted"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona2"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "blue",
+                "__namespace__Category__c" : "Revise"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona3"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Color",
+                "__namespace__Max_X_Position__c" : null,
+                "__namespace__Max_Y_Position__c" : null,
+                "__namespace__Min_X_Position__c" : null,
+                "__namespace__Min_Y_Position__c" : null,
+                "__namespace__Color__c" : "red",
+                "__namespace__Category__c" : "Rejected"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona4"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 535,
+                "__namespace__Max_Y_Position__c" : 144,
+                "__namespace__Min_X_Position__c" : 170,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona Name"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona5"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 900,
+                "__namespace__Max_Y_Position__c" : 144,
+                "__namespace__Min_X_Position__c" : 536,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona Role"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona6"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 144,
+                "__namespace__Min_X_Position__c" : 901,
+                "__namespace__Min_Y_Position__c" : 0,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Persona Experience Level"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona7"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 641,
+                "__namespace__Max_Y_Position__c" : 433,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 145,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Facts & Demographics"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona8"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 433,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 145,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Obstacles & Pain Points"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona9"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 640,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 0,
+                "__namespace__Min_Y_Position__c" : 434,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Goals & Motivations"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona10"
+        },
+        {
+            "url" : "/services/data/v50.0/sobjects/__namespace__Category_Mapping__c/",
+            "body" : {
+                "__namespace__Board__c" : "@{reference_id_board_persona.id}",
+                "__namespace__Type__c" : "Bounding Box",
+                "__namespace__Max_X_Position__c" : 1280,
+                "__namespace__Max_Y_Position__c" : 720,
+                "__namespace__Min_X_Position__c" : 641,
+                "__namespace__Min_Y_Position__c" : 434,
+                "__namespace__Color__c" : null,
+                "__namespace__Category__c" : "Behaviors & Beliefs"
+            },
+            "method" : "POST",
+            "referenceId" : "reference_id_cat_persona11"
+        }
+    ]
+}

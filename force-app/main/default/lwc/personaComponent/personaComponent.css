@@ -2,13 +2,14 @@
     height: 15px;
     border-radius: 10px;
 }
-.steps-column{
+.steps-column {
     max-width: 140px;
     min-width: 140px;
 }
-.persona-style{
-    background-color: gray;
+.persona-style {
+    background-color:#505050;
+    color: #90d0fe;
 }
-.persona-font{
+.persona-font {
     color: #d3eeec;
 }

@@ -1,26 +1,54 @@
 <template>
-    <lightning-record-edit-form record-id={recId} object-api-name={objectName} onsubmit={handleSubmit} onsuccess={handelSuccess} onerror={handelError}>
+    <lightning-record-edit-form
+        record-id={recId}
+        object-api-name={objectName}
+        onsubmit={handleSubmit}
+        onsuccess={handelSuccess}
+        onerror={handleError}
+    >
         <lightning-messages></lightning-messages>
-        <lightning-layout multiple-rows>
-            <template for:each={fieldRecord} for:item="fieldItem">
-                <div key={fieldItem.name}>
-                    <lightning-layout-item size="12">
-                        <template if:true={fieldItem.value}>
-                            <lightning-input-field field-name={fieldItem.name} required={fieldItem.required}
-                                      value={fieldItem.value} disabled={fieldItem.isDisabled}></lightning-input-field>
-                        </template>
-                        <template if:false={fieldItem.value}>
-                            <lightning-input-field field-name={fieldItem.name} required={fieldItem.required}
-                                                   disabled={fieldItem.isDisabled}></lightning-input-field>
-                        </template>
-                    </lightning-layout-item>
-                </div>
+        <lightning-layout multiple-rows class="slds-var-m-around_small">
+            <template
+                for:each={fieldRec}
+                for:item="fieldItem"
+                for:index="index"
+            >
+                <lightning-layout-item
+                    size="12"
+                    key={fieldItem.id}
+                    class={fieldItem.wrapperClass}
+                >
+                    <template if:true={fieldItem.value}>
+                        <lightning-input-field
+                            field-name={fieldItem.name}
+                            required={fieldItem.required}
+                            value={fieldItem.value}
+                            disabled={fieldItem.isDisabled}
+                        ></lightning-input-field>
+                    </template>
+                    <template if:false={fieldItem.value}>
+                        <lightning-input-field
+                            field-name={fieldItem.name}
+                            required={fieldItem.required}
+                            disabled={fieldItem.isDisabled}
+                        ></lightning-input-field>
+                    </template>
+                </lightning-layout-item>
             </template>
             <lightning-layout-item size="12" class="slds-align_absolute-center">
-                <lightning-button class="slds-p-around_x-small" variant="brand" label="Cancel"
-                    onclick={closeModalWindow}>
+                <lightning-button
+                    class="slds-var-p-around_x-small"
+                    variant="brand"
+                    label="Cancel"
+                    onclick={closeModalWindow}
+                >
                 </lightning-button>
-                <lightning-button class="slds-p-around_x-small" type="submit" variant="brand" label="Save">
+                <lightning-button
+                    class="slds-var-p-around_x-small"
+                    type="submit"
+                    variant="brand"
+                    label="Save"
+                >
                 </lightning-button>
             </lightning-layout-item>
         </lightning-layout>

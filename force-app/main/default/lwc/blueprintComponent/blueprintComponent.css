@@ -4,7 +4,13 @@
     width: 1px;
 }
 
-.add-button:hover {
+.static-add-button {
+    height: 50px;
+    width: 10px;
+}
+
+.add-button:hover,
+.static-add-button {
     opacity: 1;
     width: auto;
     margin-left: 0;
@@ -14,20 +20,22 @@
     right: -2px;
 }
 
-.steps-column{
+.steps-column {
     max-width: 140px;
     min-width: 140px;
 }
 
-.steps-button{
+.steps-button {
     min-height: 70px;
     width: 100%;
+    color: #0176d3;
+    border-color: #78b0fd;
     background-color: var(--slds-c-button-color-background);
 }
-.steps-buttons--group{
+.steps-buttons--group {
     display: flex;
 }
 
-.slds-button+.slds-button{
+.slds-button + .slds-button {
     margin-left: 0 !important;
 }

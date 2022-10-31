@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>ContentDocumentLink_Assignment</name>
         <label>ContentDocumentLink Assignment</label>
         <locationX>980</locationX>
         <locationY>37</locationY>
         <assignmentItems>
-            <assignToReference>ContentDocumentLink_GetRecord.ShareType</assignToReference>
+            <assignToReference
+            >ContentDocumentLink_GetRecord.ShareType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>I</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>ContentDocumentLink_GetRecord.Visibility</assignToReference>
+            <assignToReference
+            >ContentDocumentLink_GetRecord.Visibility</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>AllUsers</stringValue>
@@ -30,14 +32,16 @@
         <locationX>981</locationX>
         <locationY>387</locationY>
         <assignmentItems>
-            <assignToReference>ContentDocumentLink_GetRecord.ShareType</assignToReference>
+            <assignToReference
+            >ContentDocumentLink_GetRecord.ShareType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>I</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>ContentDocumentLink_GetRecord.Visibility</assignToReference>
+            <assignToReference
+            >ContentDocumentLink_GetRecord.Visibility</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>InternalUsers</stringValue>
@@ -53,21 +57,24 @@
         <locationX>846</locationX>
         <locationY>210</locationY>
         <defaultConnector>
-            <targetReference>ContentDocumentLinkNotShared_Assignment</targetReference>
+            <targetReference
+            >ContentDocumentLinkNotShared_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OutcomeIs_IsCommunityShared</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>CommunityUserAccess_Toggle.value</leftValueReference>
+                <leftValueReference
+                >CommunityUserAccess_Toggle.value</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>ContentDocumentLink_Assignment</targetReference>
+                <targetReference
+                >ContentDocumentLink_Assignment</targetReference>
             </connector>
             <label>OutcomeIs IsCommunityShared</label>
         </rules>
@@ -92,7 +99,8 @@
     <formulas>
         <name>BoardImage_Formula</name>
         <dataType>String</dataType>
-        <expression>&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=&quot;+{!ContentVersion_Loop}+&quot;&amp;operationContext=CHATTER&amp;contentId=&quot;+{!ContentDocumentId_Loop}</expression>
+        <expression
+        >&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=&quot;+{!ContentVersion_Loop}+&quot;&amp;operationContext=CHATTER&amp;contentId=&quot;+{!ContentDocumentId_Loop}</expression>
     </formulas>
     <interviewLabel>Upload Image {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
@@ -102,7 +110,8 @@
         <label>ContentDocumentId Loop</label>
         <locationX>321</locationX>
         <locationY>229</locationY>
-        <collectionReference>ContentDocumentId_TextCollection</collectionReference>
+        <collectionReference
+        >ContentDocumentId_TextCollection</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>ContentVersion_Loop</targetReference>
@@ -113,7 +122,8 @@
         <label>ContentVersion Loop</label>
         <locationX>465</locationX>
         <locationY>228</locationY>
-        <collectionReference>ContentVersionId_TextCollection</collectionReference>
+        <collectionReference
+        >ContentVersionId_TextCollection</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>ContentDocumentLink_GetRecord</targetReference>
@@ -143,7 +153,8 @@
         <label>ContentDocumentLink GetRecord</label>
         <locationX>605</locationX>
         <locationY>227</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CommunityAccess_Screen</targetReference>
         </connector>
@@ -215,7 +226,8 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Would you like to make this available to Community and Guest Users?</stringValue>
+                    <stringValue
+                    >Would you like to make this available to Community and Guest Users?</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -230,7 +242,8 @@
                     <stringValue>Nope</stringValue>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -250,7 +263,8 @@
         </connector>
         <fields>
             <name>UpdateBoard_DisplayText</name>
-            <fieldText>&lt;p&gt;Select a board you want to update with this image or hit Finish if you would like to do that later.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Select a board you want to update with this image or hit Finish if you would like to do that later.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -306,23 +320,28 @@
             <inputParameters>
                 <name>contentDocIds</name>
                 <value>
-                    <elementReference>ContentDocumentId_TextCollection</elementReference>
+                    <elementReference
+                    >ContentDocumentId_TextCollection</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>contentVersionIds</name>
                 <value>
-                    <elementReference>ContentVersionId_TextCollection</elementReference>
+                    <elementReference
+                    >ContentVersionId_TextCollection</elementReference>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn
+            >UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>ContentDocumentId_TextCollection</assignToReference>
+                <assignToReference
+                >ContentDocumentId_TextCollection</assignToReference>
                 <name>contentDocIds</name>
             </outputParameters>
             <outputParameters>
-                <assignToReference>ContentVersionId_TextCollection</assignToReference>
+                <assignToReference
+                >ContentVersionId_TextCollection</assignToReference>
                 <name>contentVersionIds</name>
             </outputParameters>
         </fields>

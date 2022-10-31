@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <name>CreateSwimLaneCustomTemplate_Action</name>
@@ -36,7 +36,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <choices>
         <name>LoadTemplateV2MOM_Choice</name>
         <choiceText>Create a V2MOM</choiceText>
@@ -59,7 +59,8 @@
         <locationX>182</locationX>
         <locationY>278</locationY>
         <defaultConnector>
-            <targetReference>CreateSwimLaneCustomTemplate_Action</targetReference>
+            <targetReference
+            >CreateSwimLaneCustomTemplate_Action</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -69,7 +70,7 @@
                 <leftValueReference>CustomTemplate_Text</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue></stringValue>
+                    <stringValue />
                 </rightValue>
             </conditions>
             <connector>
@@ -113,7 +114,8 @@
         </connector>
         <fields>
             <name>Instructions_DisplayText</name>
-            <fieldText>&lt;p&gt;Select an existing template from this package or write in the name of a static resource for a custom template.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Select an existing template from this package or write in the name of a static resource for a custom template.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -124,8 +126,10 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Template_Picklist</name>
-                    <choiceReferences>LoadTemplateVisionForSuccess_Choice</choiceReferences>
-                    <choiceReferences>LoadTemplateV2MOM_Choice</choiceReferences>
+                    <choiceReferences
+                    >LoadTemplateVisionForSuccess_Choice</choiceReferences>
+                    <choiceReferences
+                    >LoadTemplateV2MOM_Choice</choiceReferences>
                     <dataType>String</dataType>
                     <fieldText>Select a template to Load</fieldText>
                     <fieldType>DropdownBox</fieldType>
@@ -172,7 +176,8 @@
         <allowPause>true</allowPause>
         <fields>
             <name>TemplateLoaded_DisplayText</name>
-            <fieldText>&lt;p&gt;Your selected template should be loaded now. &lt;a href=&quot;/lightning/o/kickboard__Lane__c/list&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;View Swim Lanes&lt;/b&gt;&lt;/a&gt; and select Template list view.&lt;/p&gt;</fieldText>
+            <fieldText
+            >&lt;p&gt;Your selected template should be loaded now. &lt;a href=&quot;/lightning/o/kickboard__Lane__c/list&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;View Swim Lanes&lt;/b&gt;&lt;/a&gt; and select Template list view.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

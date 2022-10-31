@@ -15,38 +15,42 @@
 }
 
 .goals-color {
-    background-color: #a9fffb;
+    background-color: #01c3b3;
+    color: #fff;
 }
 
 .fact-and-observations-color {
-    background-color: rgb(255 156 166);
+    background-color: #9050e9;
+    color: #fff;
 }
-.emotions-color{
-    background-color: #d8abd8;
+.emotions-color {
+    background-color: #fcc033;
+    color: #706e6b;
 }
 .metrics-color {
-    background-color: rgb(248 203 165);
+    background-color: #e3066a;
+    color: #fff;
 }
 .systems-and-key-information-color {
-    background-color: rgb(236 233 188);
+    background-color: #919191;
+    color: #fff;
 }
 .touchpoints-color {
-    background-color: #b6ffb6;
+    background-color: #ff5d2d;
+    color: #fff;
 }
 .pain-points-color {
-    background-color: rgb(156 202 255);
+    background-color: #ba0517;
+    color: #fff;
 }
-.opportunity-and-ideas-color{
-    background-color: #beddc3;
+.opportunity-and-ideas-color {
+    background-color: #3ba755;
+    color: #fff;
 }
 .my-icon {
     --sds-c-icon-color-foreground-default: orange;
-    --sds-c-icon-color-background: gray;
     opacity: 0;
-    width: 1px;
-}
-.my-icon:hover{
-    opacity: 1;
+    opacity: 0.65;
     width: auto;
     margin-left: 0;
     --sds-c-icon-color-background: gray;
@@ -54,6 +58,15 @@
     position: relative;
     right: -2px;
 }
-.my-icon-container{
-    height:30px;
+.my-icon-container {
+    height: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.font-style {
+    font-weight: 600;
 }

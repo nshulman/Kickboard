@@ -8,6 +8,8 @@ export default class PrimaryPersonaCmp extends LightningElement {
     @track refreshPrimaryPersonaData;
     @track isRefresh=false;
 
+  
+
     /**
      * Get primary persona records and process the records.
      * @param result
@@ -62,8 +64,18 @@ export default class PrimaryPersonaCmp extends LightningElement {
                         break;
                     }
                 }
-                result[indexOfStep] = stepToPersonaMap[stepRec];
+                let obj = {};
+                obj.key = indexOfStep;
+                obj.value = stepToPersonaMap[stepRec];
+                result[indexOfStep] = obj;
             })
+            for(let c=0;c<result.length;c++){
+                if(!result[c]){
+                    let obj={};
+                    obj.key = c;
+                    result[c]=obj;
+                }
+            }
         }
         return result;
     }

@@ -63,6 +63,16 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Description__c</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>UPDATEDBY_USER</fields>
+        <fields>LAST_UPDATE</fields>
+        <relatedList>Blueprint__c.Lane__c</relatedList>
+        <sortField>LAST_UPDATE</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>Order__c</fields>
         <fields>Time_to_Complete_in_minutes__c</fields>
         <fields>Description__c</fields>
@@ -89,7 +99,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h630000048zyR</masterLabel>
+        <masterLabel>00h17000009bzPN</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -1,0 +1,11 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Blueprint__c",
+                "referenceId": "Blueprint__cRef1"
+            },
+            "Name": "Sample Blueprint"
+        }
+    ]
+}

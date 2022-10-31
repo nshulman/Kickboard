@@ -39,7 +39,7 @@ export default class EventListener extends LightningElement {
         }
 
         onError((error) => {
-            console.log("Received error from server: ");
+            console.log("Received error from server: ", error.detail);
         });
     }
 
