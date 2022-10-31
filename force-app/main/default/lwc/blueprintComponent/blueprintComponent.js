@@ -71,8 +71,10 @@ export default class BlueprintComponent extends LightningElement {
      * @param event
      */
     createMetadataForStep(event) {
+        console.log("createMetadataForStep", event.target.dataset);
         this.isModalOpen = true;
         this.currentStepOrder = event.target.dataset.order;
+        console.log("createMD", this.formMetadata);
         this.formMetadata.forEach((data) => {
             if (data.name.fieldApiName === this.BLUEPRINT_API) {
                 data.value = this.recordId || "";

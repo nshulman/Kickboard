@@ -41,6 +41,19 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>blueprintMain</componentName>
+                <identifier>c_blueprintMain1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Hide_Wizard__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>flowArguments</name>
                     <value
@@ -58,22 +71,9 @@
                 <identifier>flowruntime_interview</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Persona_Count__c}</leftValue>
+                        <leftValue>{!Record.Hide_Wizard__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>0</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>blueprintMain</componentName>
-                <identifier>c_blueprintMain1</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Persona_Count__c}</leftValue>
-                        <operator>GT</operator>
-                        <rightValue>0</rightValue>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
