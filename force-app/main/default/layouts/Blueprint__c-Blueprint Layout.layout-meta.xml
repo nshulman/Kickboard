@@ -23,6 +23,10 @@
                 <behavior>Edit</behavior>
                 <field>Hide_Wizard__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Step_Count__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns />
         <style>TwoColumnsTopToBottom</style>

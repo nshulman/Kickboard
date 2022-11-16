@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <div class="slds-align_absolute-center">
+            <lightning-button-stateful
+                label-when-on="Use Wizard"
+                label-when-off="Hide Wizard"
+                label-when-hover="Change Setup Type"
+                icon-name-when-on="utility:touch_action"
+                icon-name-when-off="utility:lightning_extension"
+                icon-name-when-hover="utility:cancel"
+                selected={selected}
+                onclick={handleClick}
+            >
+            </lightning-button-stateful>
+
+            {hidey}
+        </div>
+    </lightning-card>
+</template>

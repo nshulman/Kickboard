@@ -38,17 +38,23 @@ public class StepsController {
         if (newStep != null) {
             newStep.Order__c = orderValue + 1;
             updatedSteps.add(newStep);
-            for (Blueprint_Step__c step : [
+            // Load existing steps, but don't assume we have any
+            List<Blueprint_Step__c> steps = [
                 SELECT id, Order__c
                 FROM Blueprint_Step__c
                 WHERE
                     Blueprint__c = :newStep.Blueprint__c
                     AND Order__c >= :orderValue + 1
-            ]) {
-                // Step cannot be null
-                step.Order__c = step.Order__c+1;
-                updatedSteps.add(step);
+            ];
+
+            // Increment the order of all existing steps
+            if (steps?.size() > 0) {
+                for (Blueprint_Step__c step : steps) {
+                    step.Order__c = step.Order__c + 1;
+                    updatedSteps.add(step);
+                }
             }
+
             if (updatedSteps.size() > 0) {
                 upsert updatedSteps;
                 isRecordInsert = true;

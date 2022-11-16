@@ -41,13 +41,32 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>hideWizard</componentName>
+                <identifier>c_hideWizard</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Persona_Count__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>0</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>blueprintMain</componentName>
                 <identifier>c_blueprintMain1</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Hide_Wizard__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Persona_Count__c}</leftValue>
+                        <operator>GT</operator>
+                        <rightValue>0</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -70,10 +89,16 @@
                 <componentName>flowruntime:interview</componentName>
                 <identifier>flowruntime_interview</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Hide_Wizard__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>false</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Persona_Count__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>0</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

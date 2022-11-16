@@ -22,6 +22,7 @@ export default class BlueprintComponent extends LightningElement {
         // will be true if allStepsData is null or 0 length array
         return !(this.allStepsData?.length > 0);
     }
+
     formMetadata = [
         {
             id: 1,
@@ -71,10 +72,13 @@ export default class BlueprintComponent extends LightningElement {
      * @param event
      */
     createMetadataForStep(event) {
-        console.log("createMetadataForStep", event.target.dataset);
+        console.log(
+            "createMetadataForStep",
+            JSON.stringify(event.target.dataset)
+        );
         this.isModalOpen = true;
-        this.currentStepOrder = event.target.dataset.order;
-        console.log("createMD", this.formMetadata);
+        this.currentStepOrder = event.currentTarget.dataset.order;
+        console.log("createMD", this.formMetadata, this.currentStepOrder);
         this.formMetadata.forEach((data) => {
             if (data.name.fieldApiName === this.BLUEPRINT_API) {
                 data.value = this.recordId || "";
@@ -109,6 +113,7 @@ export default class BlueprintComponent extends LightningElement {
     createBlueprintStep(event) {
         if (event.detail && event.detail.fields) {
             let data = JSON.stringify(event.detail.fields);
+            console.log("data", data);
             let prevOrder = this.currentStepOrder;
             this.showSpinner = true;
             addNewStep({ fields: data, order: prevOrder })
