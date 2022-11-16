@@ -11,9 +11,29 @@
             </button> -->
         </div>
 
-        <!-- for first step -->
+        <!-- for first step only -->
         <template if:true={showFirstStep}>
-            <div class="steps-buttons--group slds-grid_reverse">
+            <lightning-button-icon
+                icon-name="utility:record_create"
+                size="large"
+                variant="bare"
+                alternative-text="Add Step"
+                data-order="0"
+                onclick={createMetadataForStep}
+            >
+                <label>Add Step</label>
+            </lightning-button-icon>
+
+            <!-- <div class="steps-buttons--group slds-grid_reverse">
+                <lightning-button-icon
+                    class="slds-var-m-left_xx-small"
+                    icon-name="utility:record_create"
+                    data-order="0"
+                    title="Add Step"
+                    size="x-small"
+                    alternative-text="View More"
+                    onclick={createMetadataForStep}
+                ></lightning-button-icon>
                 <button
                     class="slds-button static-add-button"
                     data-order="0"
@@ -22,7 +42,7 @@
                 >
                     <label>+</label>
                 </button>
-            </div>
+            </div> -->
         </template>
 
         <template for:each={allStepsData} for:item="step" for:index="index">
@@ -37,13 +57,30 @@
                 class="slds-grid slds-grid_vertical steps-column slds-var-m-horizontal_xxx-small"
             >
                 <div class="steps-buttons--group slds-grid_reverse">
-                    <button
-                        class="slds-button add-button"
-                        key={step.Name}
+                    <!-- <lightning-button-icon
+                        class=""
+                        icon-name="utility:record_create"
+                        size="medium"
+                        variant="bare"
+                        alternative-text="Add Step"
                         data-order={step.Order__c}
                         onclick={createMetadataForStep}
                     >
-                        +
+                        <label>Add Step</label>
+                    </lightning-button-icon> -->
+
+                    <button
+                        class="slds-button add-button"
+                        data-order={step.Order__c}
+                        onclick={createMetadataForStep}
+                        title="Add Step"
+                    >
+                        <lightning-icon
+                            icon-name="utility:record_create"
+                            alternative-text="Add Step"
+                            variant="inverse"
+                            size="x-small"
+                        ></lightning-icon>
                     </button>
                     <button
                         data-order={index}

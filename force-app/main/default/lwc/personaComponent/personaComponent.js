@@ -26,6 +26,9 @@ export default class PersonaStepCmp extends LightningElement {
     @track personaRecords = [];
     @track isPrimaryPersonaCard;
     @track apiName;
+
+    firstStep = true;
+
     @track metadata;
     @track blueprintCardApiName = BLUEPRINT_CARD_OBJECT;
     @track blueprintPersonaStepApiName = BLUEPRINT_PERSONA_STEP_OBJECT;

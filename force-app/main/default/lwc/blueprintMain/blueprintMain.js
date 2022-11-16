@@ -38,7 +38,10 @@ export default class BlueprintMain extends LightningElement {
      * @param event
      */
     getAllSteps(event) {
-        this.showPersonaSteps = true;
+        console.log("getAllSteps", JSON.stringify(event.detail));
+        if (event.detail.length > 0) {
+            this.showPersonaSteps = true;
+        }
         if (this.stepsRecord?.length > 0) {
             this.stepsRecord = null;
         }

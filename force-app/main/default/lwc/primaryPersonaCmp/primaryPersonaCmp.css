@@ -1,16 +1,21 @@
-.first-col{
+.first-col {
     min-width: 140px;
-    color:#b2b2b2;
+    color: #b2b2b2;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.steps-column{
+.steps-column {
     max-width: 140px;
     min-width: 140px;
 }
 .add-button {
     height: 15px;
+    border-radius: 10px;
+}
+
+.primary-persona-row {
+    background-color: #e5f1f7;
     border-radius: 10px;
 }

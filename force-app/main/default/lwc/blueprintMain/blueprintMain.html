@@ -49,23 +49,15 @@
         ></c-blueprint-component>
     </div>
     <template if:true={showPersonaSteps}>
-        <div
-            class="primary-persona-row slds-var-p-around_xx-small slds-var-m-bottom_small"
+        <c-primary-persona-cmp
+            step-id={stepsRecord}
+            onsendbpcarddetail={createBlueprintCardFromParent}
         >
-            <c-primary-persona-cmp
-                step-id={stepsRecord}
-                onsendbpcarddetail={createBlueprintCardFromParent}
-            >
-            </c-primary-persona-cmp>
-        </div>
-        <div
-            class="slds-grid personas-row slds-var-p-around_xx-small slds-var-m-bottom_small"
-        >
-            <div class="slds-var-m-horizontal_xxx-small first-col"></div>
-            <c-persona-component
-                current-step-id={stepsRecord}
-                onrefreshprimarycard={refreshPrimaryPersona}
-            ></c-persona-component>
-        </div>
+        </c-primary-persona-cmp>
+
+        <c-persona-component
+            current-step-id={stepsRecord}
+            onrefreshprimarycard={refreshPrimaryPersona}
+        ></c-persona-component>
     </template>
 </template>

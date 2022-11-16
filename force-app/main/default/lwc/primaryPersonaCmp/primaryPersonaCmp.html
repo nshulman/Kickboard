@@ -1,54 +1,65 @@
 <template>
-    <div class="slds-grid">
-        <div class="first-col slds-m-horizontal_xxx-small">
-            <article class="steps-column">{primaryPersonaName}</article>
-        </div>
-        <div class="slds-grid">
-            <template if:true={processedPrimaryPersona}>
-                <template for:each={processedPrimaryPersona} for:item="primary">
-                    <template if:true={primary}>
-                        <div
-                            key={primary.key}
-                            class="slds-m-horizontal_xxx-small steps-column"
+    <template if:true={hasPrimaryPersona}>
+        <div
+            class="primary-persona-row slds-var-p-around_xx-small slds-var-m-bottom_small"
+        >
+            <div class="slds-grid">
+                <div class="first-col slds-m-horizontal_xxx-small">
+                    <article class="steps-column">{primaryPersonaName}</article>
+                </div>
+                <div class="slds-grid">
+                    <template if:true={processedPrimaryPersona}>
+                        <template
+                            for:each={processedPrimaryPersona}
+                            for:item="primary"
                         >
-                            <template if:true={primary.value}>
-                                <template
-                                    for:each={primary.value}
-                                    for:item="primaryCard"
+                            <template if:true={primary}>
+                                <div
+                                    key={primary.key}
+                                    class="slds-m-horizontal_xxx-small steps-column"
                                 >
-                                    <div
-                                        key={primaryCard.Id}
-                                        class="slds-m-top_xx-small"
-                                    >
-                                        <c-persona-step-component
-                                            persona-step-data={primaryCard.Blueprint_Cards__r}
-                                            oneditrecord={sendBlueprintCardDetails}
-                                            onrefreshdragdrop={refreshPrimary}
-                                        ></c-persona-step-component>
-
-                                        <div class="slds-text-align_center">
-                                            <lightning-button-icon
-                                                icon-name="utility:new"
-                                                size="medium"
-                                                variant="bare"
-                                                alternative-text="Add Step"
-                                                data-id={primaryCard.Id}
-                                                onclick={sendBlueprintCardDetails}
+                                    <template if:true={primary.value}>
+                                        <template
+                                            for:each={primary.value}
+                                            for:item="primaryCard"
+                                        >
+                                            <div
+                                                key={primaryCard.Id}
+                                                class="slds-m-top_xx-small"
                                             >
-                                                <label>Add Step</label>
-                                            </lightning-button-icon>
-                                        </div>
-                                    </div>
-                                </template>
-                            </template>
-                        </div>
-                    </template>
-                    <!--            <template if:false= {primary}>-->
-                    <!--                <div key={primary.key} class="steps-column slds-m-horizontal_xxx-small"></div>-->
+                                                <c-persona-step-component
+                                                    persona-step-data={primaryCard.Blueprint_Cards__r}
+                                                    oneditrecord={sendBlueprintCardDetails}
+                                                    onrefreshdragdrop={refreshPrimary}
+                                                ></c-persona-step-component>
 
-                    <!--            </template>-->
-                </template>
-            </template>
+                                                <div
+                                                    class="slds-text-align_center"
+                                                >
+                                                    <lightning-button-icon
+                                                        icon-name="utility:new"
+                                                        size="medium"
+                                                        variant="bare"
+                                                        alternative-text="Add Step"
+                                                        data-id={primaryCard.Id}
+                                                        onclick={sendBlueprintCardDetails}
+                                                    >
+                                                        <label>Add Step</label>
+                                                    </lightning-button-icon>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </template>
+                            <!--            <template if:false= {primary}>-->
+                            <!--                <div key={primary.key} class="steps-column slds-m-horizontal_xxx-small"></div>-->
+
+                            <!--            </template>-->
+                        </template>
+                    </template>
+                </div>
+            </div>
         </div>
-    </div>
+    </template>
 </template>
