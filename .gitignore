@@ -39,3 +39,6 @@ $RECYCLE.BIN/
 
 **/appMenus
 .sf/
+
+# Ignore restriction rules
+force-app/main/default/fieldRestrictionRules
