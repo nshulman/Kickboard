@@ -2,26 +2,30 @@
     <div
         class="slds-grid personas-row slds-var-p-around_xx-small slds-var-m-bottom_small"
     >
-        <div class="slds-var-m-horizontal_xxx-small first-col">
-            <template if:true={firstStep}>
-                <div class="slds-grid">
-                    <div
-                        class="steps-column slds-var-m-horizontal_xxx-small slds-text-align_center slds-var-m-bottom_small personaStepCmp"
+        <!-- Show icon to add first persona, only if there are no Personas available -->
+        <div class="slds-var-p-around_medium">
+            <template if:true={firstPersona}>
+                <div
+                    class="steps-column slds-var-m-horizontal_xxx-small slds-text-align_center slds-var-m-bottom_small personaStepCmp"
+                >
+                    <lightning-button-icon
+                        icon-name="utility:adduser"
+                        size="large"
+                        variant="bare"
+                        alternative-text="Add Persona"
+                        data-id=""
+                        onclick={createFormForNewPersona}
                     >
-                        <lightning-button-icon
-                            icon-name="utility:new"
-                            size="medium"
-                            variant="bare"
-                            alternative-text="Add Step"
-                            data-id=""
-                            onclick={createMetadataBlueprintCard}
-                        >
-                            <label>Add Step</label>
-                        </lightning-button-icon>
-                    </div>
+                        <label>Add Persona</label>
+                    </lightning-button-icon>
+                    <br />
+                    <br />
+                    Create your first persona.
                 </div>
             </template>
         </div>
+
+        <!-- List personas -->
         <div class="slds-grid">
             <template
                 for:each={personaRecords}
@@ -77,11 +81,14 @@
                                                         icon-name="utility:new"
                                                         size="medium"
                                                         variant="bare"
-                                                        alternative-text="Add Step"
+                                                        alternative-text="Add Persona Step"
                                                         data-id={perStep.Id}
                                                         onclick={createMetadataBlueprintCard}
                                                     >
-                                                        <label>Add Step</label>
+                                                        <label
+                                                            >Add Persona
+                                                            Step</label
+                                                        >
                                                     </lightning-button-icon>
                                                 </div>
                                             </div>
@@ -90,6 +97,7 @@
                                 </template>
                             </template>
                         </div>
+                        <!-- add a new Persona within the step -->
                         <div class="slds-text-align_center">
                             <lightning-button-icon
                                 icon-name="utility:adduser"
@@ -120,6 +128,7 @@
                 class="slds-modal slds-fade-in-open"
             >
                 <div class="slds-modal__container">
+                    <div class="slds-modal__header">Create new Persona</div>
                     <!--                <header class="slds-modal__header">-->
                     <!--                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"-->
                     <!--                            title="Close" onclick={closeModal}>-->
@@ -130,7 +139,10 @@
                     <!--                    <div>{formHeading}</div>-->
                     <!--                </header>-->
                     <template if:true={metadata}>
-                        <div class="slds-grid">
+                        <div
+                            class="slds-modal__content slds-p-around_medium"
+                            id="modal-content-id-1"
+                        >
                             <c-create-record-edit-form
                                 class="slds-col"
                                 object-name={apiName}
@@ -156,7 +168,10 @@
                     </template>
                 </div>
             </section>
-            <div class="slds-backdrop slds-backdrop_open"></div>
+            <div
+                class="slds-backdrop slds-backdrop_open"
+                role="presentation"
+            ></div>
         </template>
         <!-- <template if:true={isDelete}> -->
         <c-message-box

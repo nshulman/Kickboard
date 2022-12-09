@@ -50,12 +50,13 @@
     </div>
     <template if:true={showPersonaSteps}>
         <c-primary-persona-cmp
-            step-id={stepsRecord}
+            record-id={recordId}
             onsendbpcarddetail={createBlueprintCardFromParent}
         >
         </c-primary-persona-cmp>
 
         <c-persona-component
+            record-id={recordId}
             current-step-id={stepsRecord}
             onrefreshprimarycard={refreshPrimaryPersona}
         ></c-persona-component>

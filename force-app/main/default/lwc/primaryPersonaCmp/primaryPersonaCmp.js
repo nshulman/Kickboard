@@ -1,36 +1,53 @@
+/* eslint-disable lines-between-class-members */
 import { LightningElement, wire, api, track } from "lwc";
-import getPrimaryPersonaRecords from "@salesforce/apex/personaStep.getPrimaryPersonaRecords";
+import getPrimaryInfo from "@salesforce/apex/personaStep.getPrimaryInfo";
 import { refreshApex } from "@salesforce/apex";
+
 export default class PrimaryPersonaCmp extends LightningElement {
-    @api stepId;
-
-    @track primaryPersonaName;
-
-    @track processedPrimaryPersona = [];
-
+    @api recordId;
+    persona = { Name: "" };
+    steps = [];
+    cardMap = {};
     @track refreshPrimaryPersonaData;
-
     @track isRefresh = false;
-
     hasPrimaryPersona = false;
 
     /**
      * Get primary persona records and process the records.
      * @param result
      */
-    @wire(getPrimaryPersonaRecords, { stepIds: "$stepId" })
-    wiredGetPrimaryPersona(result) {
-        if (result && result.data) {
+    @wire(getPrimaryInfo, { recordId: "$recordId" })
+    getpersona(result) {
+        let info = result?.data;
+        if (info) {
+            // deproxy
+            info = JSON.parse(JSON.stringify(info));
+            this.hasPrimaryPersona = true;
+            // console.log("info", JSON.stringify(info));
+
+            // Create map by Id
+            this.personaStepMap = {};
+            info.steps.forEach((x) => {
+                this.cardMap[x.Blueprint_Step__c] =
+                    x.Blueprint_Persona_Cards__r;
+            });
+            console.log("map", JSON.stringify(this.cardMap));
             this.refreshPrimaryPersonaData = result;
-            let primaryData = result.data;
-            if (primaryData.length > 0) {
-                this.processedPrimaryPersona =
-                    this.processPrimaryPersonaData(primaryData);
-                this.primaryPersonaName =
-                    primaryData[0] && primaryData[0].Blueprint_Persona__r
-                        ? primaryData[0].Blueprint_Persona__r.Name
-                        : "";
-            }
+            this.persona = info.persona;
+            this.steps = info.allSteps.map((s) => ({
+                ...s,
+                cards: this.cardMap[s.Id]
+            }));
+            console.log("steps", JSON.stringify(this.steps));
+            // if (rows.length > 0) {
+            //     const [primary] = rows; // Grab first row as primary
+            //     this.processedPrimaryPersona =
+            //         this.processPrimaryPersonaData(rows);
+            //     console.log("primary", JSON.stringify(primary));
+            //     this.primaryPersonaName =
+            //         primary.Blueprint_Persona__r?.Name || "";
+            //     this.hasPrimaryPersona = true;
+            // }
         } else if (result.error) {
             console.log("Error", result.error);
         }
@@ -45,58 +62,11 @@ export default class PrimaryPersonaCmp extends LightningElement {
     }
 
     /**
-     * Process the data  from wired service and
-     * arrange all the persona under each step.
-     * @param data
-     * @returns {*[]}
-     */
-    processPrimaryPersonaData(data) {
-        let result = [];
-        let stepToPersonaMap = {};
-        if (data && data.length > 0) {
-            data.forEach((perStep) => {
-                if (
-                    Object.keys(stepToPersonaMap).includes(
-                        perStep.Blueprint_Step__c
-                    )
-                ) {
-                    stepToPersonaMap[perStep.Blueprint_Step__c].push(perStep);
-                } else {
-                    let personaStepArray = [];
-                    personaStepArray.push(perStep);
-                    stepToPersonaMap[perStep.Blueprint_Step__c] =
-                        personaStepArray;
-                }
-            });
-            Object.keys(stepToPersonaMap).forEach((stepRec) => {
-                let indexOfStep;
-                for (let i = 0; i < this.stepId.length; i++) {
-                    if (this.stepId[i] === stepRec) {
-                        indexOfStep = i;
-                        break;
-                    }
-                }
-                let obj = {};
-                obj.key = indexOfStep;
-                obj.value = stepToPersonaMap[stepRec];
-                result[indexOfStep] = obj;
-            });
-            for (let c = 0; c < result.length; c++) {
-                if (!result[c]) {
-                    let obj = {};
-                    obj.key = c;
-                    result[c] = obj;
-                }
-            }
-        }
-        return result;
-    }
-
-    /**
      * Send personaStepId and order coming method to parent component.
      * @param event
      */
     sendBlueprintCardDetails(event) {
+        console.log("bpcd");
         let obj = {};
         if (event.detail.isEdit) {
             obj = event.detail;

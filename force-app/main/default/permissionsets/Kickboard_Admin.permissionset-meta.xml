@@ -96,8 +96,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Blueprint__c.Hide_Wizard__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Blueprint__c.Persona_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Blueprint__c.Step_Count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

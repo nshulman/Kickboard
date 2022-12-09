@@ -19,6 +19,7 @@ export default class BlueprintComponent extends LightningElement {
     @track currentStepOrder;
     @track blueprintStepApiName = BLUEPRINT_STEP_OBJECT;
     get showFirstStep() {
+        console.log("showFirstStep", this.allStepsData);
         // will be true if allStepsData is null or 0 length array
         return !(this.allStepsData?.length > 0);
     }

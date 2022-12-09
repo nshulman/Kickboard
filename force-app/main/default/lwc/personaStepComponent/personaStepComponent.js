@@ -11,6 +11,7 @@ export default class PersonaStepComponent extends LightningElement {
 
     set personaStepData(value) {
         // recreate the array and values and lose the proxy
+        console.log("this.personas", this.value);
         this.personas = Array.isArray(value)
             ? value.map((x) => ({ ...x }))
             : [];

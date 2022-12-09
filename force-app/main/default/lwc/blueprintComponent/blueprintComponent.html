@@ -13,17 +13,22 @@
 
         <!-- for first step only -->
         <template if:true={showFirstStep}>
-            <lightning-button-icon
-                icon-name="utility:record_create"
-                size="large"
-                variant="bare"
-                alternative-text="Add Step"
-                data-order="0"
-                onclick={createMetadataForStep}
-            >
-                <label>Add Step</label>
-            </lightning-button-icon>
-
+            <div class="slds-var-p-around_medium">
+                <lightning-button-icon
+                    icon-name="utility:record_create"
+                    size="large"
+                    variant="bare"
+                    alternative-text="Add Step"
+                    data-order="0"
+                    onclick={createMetadataForStep}
+                >
+                    <label>Add Step</label>
+                </lightning-button-icon>
+                <br />
+                <br />
+                Create your first step. Once your first step is created, you can
+                start creating personas.
+            </div>
             <!-- <div class="steps-buttons--group slds-grid_reverse">
                 <lightning-button-icon
                     class="slds-var-m-left_xx-small"
@@ -93,6 +98,7 @@
             </div>
         </template>
     </div>
+
     <template if:true={isModalOpen}>
         <section
             role="dialog"

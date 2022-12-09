@@ -42,11 +42,11 @@ export default class BlueprintMain extends LightningElement {
         if (event.detail.length > 0) {
             this.showPersonaSteps = true;
         }
-        if (this.stepsRecord?.length > 0) {
-            this.stepsRecord = null;
-        }
+
         if (event.detail) {
             this.stepsRecord = event.detail.map((x) => x.Id);
+        } else {
+            this.stepsRecord = null;
         }
         // let data = [];
         // if (event.detail) {
